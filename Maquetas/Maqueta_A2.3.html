@@ -1,0 +1,356 @@
+<style>
+  /* =========================================
+     MASTER CSS TUCANEO V2 - FIXED FOR SIDEBAR
+     ========================================= */
+
+  /* HEADER TRANSPARENTE & GENERAL */
+  header#masthead, .site-header {
+      background-color: transparent !important;
+      position: absolute !important;
+      top: 0; width: 100%; z-index: 99;
+      border-bottom: none !important;
+      box-shadow: none !important;
+      padding-top: 20px !important; 
+  }
+  .main-header-menu .menu-item > .menu-link, .site-title a, .site-header a {
+      color: #ffffff !important; 
+      text-shadow: 0 2px 5px rgba(0,0,0,0.8); 
+      font-weight: 700 !important; font-size: 1.1rem !important;
+  }
+  .main-header-menu .menu-item > .menu-link:hover { color: #f59e0b !important; }
+   
+  .tucaneo-container {
+    width: 100%; margin: 0 auto;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding-bottom: 100px;
+  }
+
+  /* PORTADA HERO - VERSIÓN FINAL (SIN BORDES) */
+  .tucaneo-hero {
+      position: relative;
+      width: 100vw; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;
+      height: 85vh; min-height: 600px;
+      background-image: url('https://tucaneo.com/wp-content/uploads/2025/09/unnamed-1-e1765818358112.png');
+      background-size: cover; background-position: center center; background-repeat: no-repeat;
+      border-radius: 0 0 30px 30px; margin-bottom: 60px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3); overflow: hidden;
+  }
+  .tucaneo-overlay {
+    background: linear-gradient(180deg, rgba(9, 23, 18, 0.4) 0%, rgba(9, 23, 18, 0.2) 40%, rgba(9, 23, 18, 0.7) 100%);
+    width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;
+  }
+  .tucaneo-hero-content {
+    position: relative; z-index: 10; padding: 20px; max-width: 850px;
+    text-align: center; color: white; margin-top: 50px; 
+  }
+  .tucaneo-tagline { 
+    display: inline-block; background-color: #f59e0b; color: #000; 
+    font-weight: 800; font-size: 0.9rem; padding: 8px 16px; 
+    border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; 
+    margin-bottom: 25px; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4); 
+  }
+  .tucaneo-hero h1 { font-size: 3.5rem; line-height: 1.1; font-weight: 900; margin-bottom: 25px; color: white; text-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+  .tucaneo-hero p { font-size: 1.2rem; line-height: 1.6; color: #f3f4f6; margin-bottom: 45px; max-width: 90%; margin-left: auto; margin-right: auto; font-weight: 500; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+   
+  .tucaneo-cta { 
+    background-color: #10b981; color: white !important; padding: 18px 45px; 
+    border-radius: 50px; font-weight: 800; text-decoration: none; 
+    display: inline-block; transition: all 0.3s ease; border: none; 
+    font-size: 1.3rem; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.5); 
+  }
+  .tucaneo-cta:hover { background-color: #059669; transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 35px rgba(16, 185, 129, 0.7); }
+
+  /* ACORDEÓN (MÓDULOS) */
+  .tucaneo-module {
+    background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px;
+    margin-bottom: 25px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+  }
+  details.tucaneo-module[open] { box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-color: #06b6d4; }
+
+  .tucaneo-summary {
+    background-color: #f9fafb; padding: 20px 30px; cursor: pointer;
+    font-size: 1.1rem; font-weight: 800; color: #111827; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: background 0.3s; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .tucaneo-summary:hover { background-color: #f3f4f6; }
+  .tucaneo-summary::after { content: '+'; font-size: 1.5rem; font-weight: 300; color: #6b7280; transition: transform 0.3s; }
+  details[open] .tucaneo-summary::after { content: '+'; transform: rotate(45deg); color: #0891b2; }
+  details[open] .tucaneo-summary { background-color: #ecfeff; color: #0e7490; border-bottom: 1px solid #e5e7eb; }
+  .tucaneo-summary::-webkit-details-marker { display: none; }
+   
+  .tucaneo-module-content { padding: 20px; background: #fff; animation: fadeIn 0.5s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* GRID Y TARJETAS */
+  .tucaneo-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px; padding: 20px 0; font-family: sans-serif;
+  }
+  .tucaneo-card {
+    background: #fff; border-radius: 16px; border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; display: flex;
+    flex-direction: column; height: 100%; transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .tucaneo-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+   
+  .contenedor-imagen { position: relative; height: 180px; overflow: hidden; }
+  .tucaneo-cover-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .tucaneo-card:hover .tucaneo-cover-img { transform: scale(1.05); }
+   
+  .tucaneo-badge {
+    position: absolute; top: 15px; left: 15px; color: white !important; padding: 6px 12px;
+    border-radius: 8px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;
+    z-index: 2; box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  .tucaneo-body { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+  .tucaneo-meta { display: flex; gap: 15px; font-size: 0.85rem; color: #6b7280; margin-bottom: 12px; font-weight: 700; text-transform: uppercase; }
+  .tucaneo-title { margin: 0 0 10px 0; font-size: 1.4rem; font-weight: 800; color: #1f2937; line-height: 1.2; }
+  .tucaneo-desc { font-size: 0.95rem; color: #4b5563; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
+   
+  /* BOTONES */
+  .tucaneo-btn {
+    display: flex; justify-content: center; align-items: center; width: 100%; padding: 14px;
+    font-weight: 800; border-radius: 12px; border: none; cursor: pointer; text-transform: uppercase;
+    font-size: 0.9rem; color: white !important; text-decoration: none !important; transition: 0.2s; box-sizing: border-box;
+  }
+  .tucaneo-btn:active { transform: scale(0.98); }
+
+  /* COLORES Y TEMAS */
+  .tema-a1 { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
+  .btn-a1 { background-color: #2563eb !important; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3); }
+  .btn-a1:hover { background-color: #1d4ed8 !important; }
+
+  .tema-b1 { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+  .btn-b1 { background-color: #f59e0b !important; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3); }
+  .btn-b1:hover { background-color: #d97706 !important; }
+
+  /* RESPONSIVE */
+  @media (max-width: 921px) {
+    header#masthead, .site-header { background-color: #ffffff !important; padding-top: 0px !important; position: fixed !important; box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;}
+    .site-title a, .site-header .ast-button-wrap .menu-toggle-icon { color: #0e231b !important; text-shadow: none !important; }
+    .tucaneo-hero { width: 100%; height: auto !important; min-height: 550px; margin-top: 130px; border-radius: 25px !important; }
+    .tucaneo-hero-content { padding: 30px 20px !important; margin-top: 0px !important; }
+    .tucaneo-hero h1 { font-size: 2.2rem; }
+  }
+</style>
+
+<div class="tucaneo-container">
+    
+  <div class="tucaneo-hero">
+    <div class="tucaneo-overlay"></div> 
+    <div class="tucaneo-hero-content">
+      <span class="tucaneo-tagline">Nivel A2.3</span>
+      <h1>Vida Digital y Presente Progresivo</h1>
+      <p>Domina el debate sobre tecnología y aprende a narrar lo que está ocurriendo ahora mismo. Un bloque esencial para conectar gramática y realidad.</p>
+      <a href="#modulo-1-a23" class="tucaneo-cta">Empezar Lecciones</a>
+    </div>
+  </div>
+    
+  <details class="tucaneo-module" id="modulo-1-a23" open>
+    <summary class="tucaneo-summary">
+      <span>Módulo 1: Tecnología y Acciones en Curso</span>
+    </summary>
+    <div class="tucaneo-module-content">
+      <div class="tucaneo-grid">
+        <article class="tucaneo-card">
+          <div class="contenedor-imagen">
+              <span class="tucaneo-badge tema-b1">Tecnología y Sociedad</span>
+              <img src="https://image.pollinations.ai/prompt/group%20of%20friends%20sitting%20together%20looking%20at%20smartphones%20ignoring%20each%20other%20social%20dilemma%20cinematic%20lighting?width=800&height=600&nologo=true" class="tucaneo-cover-img">
+          </div>
+          <div class="tucaneo-body">
+            <div class="tucaneo-meta"><span style="color: #d97706;">● Nivel A2</span><span>• 15 min</span></div>
+            <h3 class="tucaneo-title">¿Vives conectado o atrapado?</h3>
+            <p class="tucaneo-desc">¿Controlas tu móvil o él te controla a ti? Debatiremos sobre la dependencia digital y el impacto de las redes sociales.</p>
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/%C2%BFVives%20Conectado%20o%20Atrapado.html" class="tucaneo-btn btn-b1" target="_blank">Empezar Lección</a>
+          </div>
+        </article>
+
+        <article class="tucaneo-card">
+          <div class="contenedor-imagen">
+              <span class="tucaneo-badge tema-b1">Gramática en Acción</span>
+              <img src="https://image.pollinations.ai/prompt/person%20running%20in%20a%20city%20park%20action%20shot%20motion%20blur%20doing%20things%20now%20photography?width=800&height=600&nologo=true" class="tucaneo-cover-img">
+          </div>
+          <div class="tucaneo-body">
+            <div class="tucaneo-meta"><span style="color: #d97706;">● Nivel A2</span><span>• 15 min</span></div>
+            <h3 class="tucaneo-title">Presente Progresivo</h3>
+            <p class="tucaneo-desc">Aprende a describir lo que está ocurriendo ahora mismo. Domina la estructura "estar + gerundio".</p>
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/Presente%20progresivo.html" class="tucaneo-btn btn-b1" target="_blank">Empezar Lección</a>
+          </div>
+        </article>
+
+        <article class="tucaneo-card">
+          <div class="contenedor-imagen">
+              <span class="tucaneo-badge tema-b1">Práctica Interactiva</span>
+              <img src="https://image.pollinations.ai/prompt/student%20practicing%20grammar%20online%20flat%20vector%20illustration%20minimalist%20colorful%20design?width=800&height=600&nologo=true" class="tucaneo-cover-img">
+          </div>
+          <div class="tucaneo-body">
+            <div class="tucaneo-meta"><span style="color: #d97706;">● Nivel A2</span><span>• 15 min</span></div>
+            <h3 class="tucaneo-title">Presente Progresivo: Ejercicios</h3>
+            <p class="tucaneo-desc">¡Pon a prueba tus conocimientos! Refuerza la gramática con ejercicios dinámicos diseñados para corregir errores.</p>
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/Presente%20progresivo%20ejercicios.html.html" class="tucaneo-btn btn-b1" target="_blank">Empezar Lección</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="tucaneo-module">
+    <summary class="tucaneo-summary">
+      <span>Módulo 2: Influencia y Mandatos</span>
+    </summary>
+    <div class="tucaneo-module-content">
+      <div class="tucaneo-grid">
+        <article class="tucaneo-card"> 
+          <div class="contenedor-imagen"> 
+            <span class="tucaneo-badge tema-a1">Gramática</span> 
+            <img src="https://image.pollinations.ai/prompt/grammar%20concept%20creative%20writing%20desk%20spanish%20education?width=800&height=600&nologo=true" class="tucaneo-cover-img"> 
+          </div> 
+          <div class="tucaneo-body"> 
+            <div class="tucaneo-meta"> <span style="color: #2563eb;">● Nivel A2</span> <span>• 20 min</span> </div> 
+            <h3 class="tucaneo-title">Cláusulas del subjuntivo</h3> 
+            <p class="tucaneo-desc">Actividades diseñadas para explicar el uso del subjuntivo en oraciones subordinadas de forma sencilla.</p> 
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/Claususlas%20del%20subjuntivo.html" class="tucaneo-btn btn-a1" target="_blank">Empezar Lección</a> 
+          </div> 
+        </article>
+
+        <article class="tucaneo-card"> 
+          <div class="contenedor-imagen"> 
+            <span class="tucaneo-badge tema-a1">Gramática</span> 
+            <img src="https://image.pollinations.ai/prompt/giving%20commands%20directions%20teacher%20pointing%20illustration?width=800&height=600&nologo=true" class="tucaneo-cover-img"> 
+          </div> 
+          <div class="tucaneo-body"> 
+            <div class="tucaneo-meta"> <span style="color: #2563eb;">● Nivel A2</span> <span>• 20 min</span> </div> 
+            <h3 class="tucaneo-title">El imperativo</h3> 
+            <p class="tucaneo-desc">Aprende a dar órdenes, consejos e instrucciones con estas diapositivas dinámicas y claras.</p> 
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/El%20imperativo.html" class="tucaneo-btn btn-a1" target="_blank">Empezar Lección</a> 
+          </div> 
+        </article>
+
+        <article class="tucaneo-card"> 
+          <div class="contenedor-imagen"> 
+            <span class="tucaneo-badge tema-a1">Práctica</span> 
+            <img src="https://image.pollinations.ai/prompt/interactive%20exercise%20checklist%20learning%20spanish%20on%20tablet?width=800&height=600&nologo=true" class="tucaneo-cover-img"> 
+          </div> 
+          <div class="tucaneo-body"> 
+            <div class="tucaneo-meta"> <span style="color: #2563eb;">● Nivel A2</span> <span>• 15 min</span> </div> 
+            <h3 class="tucaneo-title">El imperativo ejercicios</h3> 
+            <p class="tucaneo-desc">Ejercicios interactivos para reforzar el modo imperativo en tiempo real en tus clases online.</p> 
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/El%20imperativo%20ejercicios.html" class="tucaneo-btn btn-a1" target="_blank">Empezar Lección</a> 
+          </div> 
+        </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="tucaneo-module">
+    <summary class="tucaneo-summary">
+      <span>Módulo 3: Sociedad, Trabajo y Cultura</span>
+    </summary>
+    <div class="tucaneo-module-content">
+      <div class="tucaneo-grid">
+        <article class="tucaneo-card"> 
+          <div class="contenedor-imagen"> 
+            <span class="tucaneo-badge tema-a1">Laboral</span> 
+            <img src="https://image.pollinations.ai/prompt/job%20interview%20resume%20professional%20setting%20office?width=800&height=600&nologo=true" class="tucaneo-cover-img"> 
+          </div> 
+          <div class="tucaneo-body"> 
+            <div class="tucaneo-meta"> <span style="color: #2563eb;">● Nivel A2</span> <span>• 20 min</span> </div> 
+            <h3 class="tucaneo-title">En la búsqueda del trabajo</h3> 
+            <p class="tucaneo-desc">Material sobre el mundo laboral, entrevistas y vocabulario profesional para desenvolverte en español.</p> 
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/En%20la%20busqueda%20del%20trabajo.html" class="tucaneo-btn btn-a1" target="_blank">Empezar Lección</a> 
+          </div> 
+        </article>
+
+        <article class="tucaneo-card"> 
+          <div class="contenedor-imagen"> 
+            <span class="tucaneo-badge tema-a1">Social</span> 
+            <img src="https://image.pollinations.ai/prompt/mental%20health%20support%20abstract%20empathy%20illustration?width=800&height=600&nologo=true" class="tucaneo-cover-img"> </div> 
+          <div class="tucaneo-body"> 
+            <div class="tucaneo-meta"> <span style="color: #2563eb;">● Nivel A2</span> <span>• 20 min</span> </div> 
+            <h3 class="tucaneo-title">La depresión</h3> 
+            <p class="tucaneo-desc">Contenido especializado. Un enfoque empático y educativo para tratar temas de salud mental en el aula.</p> 
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/La%20depresi%C3%B3n.html" class="tucaneo-btn btn-a1" target="_blank">Empezar Lección</a> 
+          </div> 
+        </article>
+
+        <article class="tucaneo-card"> 
+          <div class="contenedor-imagen"> 
+            <span class="tucaneo-badge tema-a1">Vocabulario</span> 
+            <img src="https://image.pollinations.ai/prompt/exotic%20travel%20destinations%20landmarks%20landscape%20photography?width=800&height=600&nologo=true" class="tucaneo-cover-img"> 
+          </div> 
+          <div class="tucaneo-body"> 
+            <div class="tucaneo-meta"> <span style="color: #2563eb;">● Nivel A2</span> <span>• 20 min</span> </div> 
+            <h3 class="tucaneo-title">Lugares distintos</h3> 
+            <p class="tucaneo-desc">Recursos interactivos para practicar vocabulario de viajes y geografía de lugares únicos.</p> 
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/lugare%20distintos.html" class="tucaneo-btn btn-a1" target="_blank">Empezar Lección</a> 
+          </div> 
+        </article>
+
+        <article class="tucaneo-card"> 
+          <div class="contenedor-imagen"> 
+            <span class="tucaneo-badge tema-a1">Cultura</span> 
+            <img src="https://image.pollinations.ai/prompt/donkey%20carrying%20books%20rural%20landscape%20colombia%20culture?width=800&height=600&nologo=true" class="tucaneo-cover-img"> 
+          </div> 
+          <div class="tucaneo-body"> 
+            <div class="tucaneo-meta"> <span style="color: #2563eb;">● Nivel A2</span> <span>• 20 min</span> </div> 
+            <h3 class="tucaneo-title">El biblioburro</h3> 
+            <p class="tucaneo-desc">Descubre historias culturales únicas de impacto social para motivar a tus alumnos.</p> 
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/El%20biblioburro.html" class="tucaneo-btn btn-a1" target="_blank">Empezar Lección</a> 
+          </div> 
+        </article>
+      </div>
+    </div>
+  </details>
+
+  <details class="tucaneo-module">
+    <summary class="tucaneo-summary">
+      <span>Módulo 4: Narrando el Pasado</span>
+    </summary>
+    <div class="tucaneo-module-content">
+      <div class="tucaneo-grid">
+        <article class="tucaneo-card"> 
+          <div class="contenedor-imagen"> 
+            <span class="tucaneo-badge tema-a1">Gramática</span> 
+            <img src="https://image.pollinations.ai/prompt/timeline%20past%20tense%20learning%20spanish%20concept?width=800&height=600&nologo=true" class="tucaneo-cover-img"> 
+          </div> 
+          <div class="tucaneo-body"> 
+            <div class="tucaneo-meta"> <span style="color: #2563eb;">● Nivel A2</span> <span>• 20 min</span> </div> 
+            <h3 class="tucaneo-title">El Pretérito Perfecto Compuesto</h3> 
+            <p class="tucaneo-desc">Mejora tus clases con recursos visuales sobre los pasados en español. Material claro y moderno.</p> 
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/El%20Pret%C3%A9rito%20Perfecto%20Compuesto.html" class="tucaneo-btn btn-a1" target="_blank">Empezar Lección</a> 
+          </div> 
+        </article>
+
+        <article class="tucaneo-card"> 
+          <div class="contenedor-imagen"> 
+            <span class="tucaneo-badge tema-a1">Práctica</span> 
+            <img src="https://image.pollinations.ai/prompt/student%20writing%20spanish%20exercises%20modern%20style?width=800&height=600&nologo=true" class="tucaneo-cover-img"> 
+          </div> 
+          <div class="tucaneo-body"> 
+            <div class="tucaneo-meta"> <span style="color: #2563eb;">● Nivel A2</span> <span>• 20 min</span> </div> 
+            <h3 class="tucaneo-title">El P. Perfecto Ejercicios</h3> 
+            <p class="tucaneo-desc">Ejercicios interactivos de gramática para afianzar el uso de los tiempos pasados.</p> 
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/El%20Pret%C3%A9rito%20Perfecto%20Compuesto%20ejercicios.html" class="tucaneo-btn btn-a1" target="_blank">Empezar Lección</a> 
+          </div> 
+        </article>
+
+        <article class="tucaneo-card"> 
+          <div class="contenedor-imagen"> 
+            <span class="tucaneo-badge tema-a1">Aventura</span> 
+            <img src="https://image.pollinations.ai/prompt/time%20travel%20clocks%20epic%20fantasy%20spanish%20class?width=800&height=600&nologo=true" class="tucaneo-cover-img"> 
+          </div> 
+          <div class="tucaneo-body"> 
+            <div class="tucaneo-meta"> <span style="color: #2563eb;">● Nivel A2</span> <span>• 20 min</span> </div> 
+            <h3 class="tucaneo-title">Crónicas del Tiempo</h3> 
+            <p class="tucaneo-desc">¡El duelo de los pasados! Una narrativa épica para enseñar la diferencia entre pretéritos.</p> 
+            <a href="https://tucaneo.com/wp-content/uploads/Slides%205/Cr%C3%B3nicas%20del%20Tiempo%20El%20Duelo%20de%20los%20Pasados.html" class="tucaneo-btn btn-a1" target="_blank">Empezar Lección</a> 
+          </div> 
+        </article>
+      </div>
+    </div>
+  </details>
+
+</div>
