@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Tucaneo A2: Fundamentos Numéricos (Tropical)</title>
+    <title>Presente simple — Práctica A1+ | Tucaneo</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
@@ -826,73 +826,525 @@
     <div class="reveal">
         <div class="slides">
 
-            <!-- SLIDE 1: CALENTAMIENTO MENTAL -->
-            <section data-limit-scroll="false" class="bg-gradient-to-br from-amber-50 to-orange-100">
-                <div class="slide-container flex flex-col items-center h-full">
-                    <h2
-                        class="text-3xl font-bold text-orange-700 mb-6 bg-white/50 px-6 py-2 rounded-full shadow-sm text-center font-playfair w-full">
-                        <i class="fas fa-fire-burner mr-3"></i>¿Qué ha pasado aquí? (The Warm-up)
-                    </h2>
+            <!-- PORTADA -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="glass-card card bg-[#004d40] text-white p-8 rounded-2xl text-center max-w-2xl">
+                            <p class="text-4xl mb-3">📚</p>
+                            <p class="text-sm uppercase tracking-widest opacity-90 mb-2">Nivel A1+</p>
+                            <h1 class="!text-3xl md:!text-4xl mb-3">Present Simple Lab</h1>
+                            <p class="text-lg opacity-95">Context &amp; conjugation</p>
+                            <p class="text-sm opacity-80">Choose the right verb, conjugate it, and complete the tasks.</p>
+                            <div class="w-16 h-1 bg-[#ff6f00] rounded-full mx-auto mt-4"></div>
+                        </div>
+                        <p class="text-xs text-gray-500">Use the arrow keys or swipe.</p>
+                    </div>
+                </div>
+            </section>
 
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full flex-grow items-start">
-                        <!-- Left: Visual Context -->
-                        <div
-                            class="bg-white p-4 rounded-xl shadow-lg border border-orange-200 relative overflow-hidden group hover:scale-[1.01] transition-transform">
-                            <div
-                                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center opacity-90 transition-opacity group-hover:opacity-100">
+            <!-- REPASO RÁPIDO -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col gap-6">
+                        <h2><i class="fas fa-magic text-[#ff6f00] mr-2"></i>Quick recap: regular present tense</h2>
+                        <p class="text-sm text-gray-600">In Spanish, regular verbs end in -ar, -er, or -ir. The ending changes with the subject (yo, tú, él/ella, nosotros, ellos). Today you will choose verbs from a bank and conjugate them.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="card p-4 text-center bg-rose-50 rounded-xl border-t-4 border-rose-400">
+                                <p class="font-bold text-[#004d40]">-AR</p>
+                                <p class="text-xs mt-1">trabaj<u>o</u>, trabaj<u>as</u>, trabaj<u>a</u>, trabaj<u>amos</u>, trabaj<u>an</u></p>
                             </div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                            <div class="card p-4 text-center bg-emerald-50 rounded-xl border-t-4 border-emerald-400">
+                                <p class="font-bold text-[#004d40]">-ER</p>
+                                <p class="text-xs mt-1">beb<u>o</u>, beb<u>es</u>, beb<u>e</u>, beb<u>emos</u>, beb<u>en</u></p>
                             </div>
-                            <div class="relative z-10 h-64 flex flex-col justify-end text-white p-2">
-                                <span
-                                    class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded w-max mb-2 animate-pulse">¡DESASTRE
-                                    TOTAL!</span>
-                                <p class="text-sm italic text-gray-200">La cocina está hecha un lío...</p>
+                            <div class="card p-4 text-center bg-sky-50 rounded-xl border-t-4 border-sky-400">
+                                <p class="font-bold text-[#004d40]">-IR</p>
+                                <p class="text-xs mt-1">viv<u>o</u>, viv<u>es</u>, viv<u>e</u>, viv<u>imos</u>, viv<u>en</u></p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
 
-                        <!-- Right: Exercise -->
-                        <div
-                            class="bg-white/80 backdrop-blur-md p-6 rounded-xl shadow-xl border border-orange-100 flex flex-col justify-center h-full">
-                            <h3 class="text-xl font-bold text-slate-700 mb-4 flex items-center gap-2">
-                                <i class="fas fa-pencil text-orange-500"></i> Completa las frases:
-                            </h3>
-                            <div class="space-y-6" id="slide1-exercises">
-                                <div
-                                    class="bg-white p-3 rounded-lg border-l-4 border-orange-400 shadow-sm flex flex-col">
-                                    <label class="text-sm text-slate-500 font-bold mb-1">1. Alguien (cocinar) un pastel
-                                        gigante.</label>
-                                    <div class="flex items-center gap-2">
-                                        <input type="text" class="clean-input flex-1" placeholder="ha cocinado"
-                                            data-correct="ha cocinado">
-                                        <button onclick="checkSlideInput(this)"
-                                            class="bg-orange-100 text-orange-600 p-2 rounded-full hover:bg-orange-200 transition"><i
-                                                class="fas fa-check"></i></button>
-                                    </div>
+            <!-- DESAFÍO 1: -AR -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col gap-6">
+                        <h2><i class="fas fa-fire text-[#ff6f00] mr-2"></i>Challenge 1: -AR verbs</h2>
+                        <p class="text-sm text-gray-600">Pick the right verb from the bank and conjugate it. Bank: <strong>Trabajar · Hablar · Bailar · Cocinar</strong></p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="card p-4 flex flex-col items-center">
+                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=220&fit=crop" alt="Estudiantes" class="rounded-xl w-full object-cover h-40">
+                                <p class="text-xs text-gray-500 mt-2">Context: daily life</p>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="card p-3 flex flex-col gap-1">
+                                    <span class="text-sm">1. Mi hermana _____ en un restaurante los fines de semana.</span>
+                                    <input type="text" class="clean-input" maxlength="25">
                                 </div>
-                                <div
-                                    class="bg-white p-3 rounded-lg border-l-4 border-orange-400 shadow-sm flex flex-col">
-                                    <label class="text-sm text-slate-500 font-bold mb-1">2. El perro (comer) la
-                                        harina.</label>
-                                    <div class="flex items-center gap-2">
-                                        <input type="text" class="clean-input flex-1" placeholder="ha comido"
-                                            data-correct="ha comido">
-                                        <button onclick="checkSlideInput(this)"
-                                            class="bg-orange-100 text-orange-600 p-2 rounded-full hover:bg-orange-200 transition"><i
-                                                class="fas fa-check"></i></button>
-                                    </div>
+                                <div class="card p-3 flex flex-col gap-1">
+                                    <span class="text-sm">2. ¿Tú _____ español con tus amigos?</span>
+                                    <input type="text" class="clean-input" maxlength="25">
                                 </div>
-                                <div
-                                    class="bg-white p-3 rounded-lg border-l-4 border-orange-400 shadow-sm flex flex-col">
-                                    <label class="text-sm text-slate-500 font-bold mb-1">3. Nosotros no (limpiar) nada
-                                        todavía.</label>
-                                    <div class="flex items-center gap-2">
-                                        <input type="text" class="clean-input flex-1" placeholder="hemos limpiado"
-                                            data-correct="hemos limpiado">
-                                        <button onclick="checkSlideInput(this)"
-                                            class="bg-orange-100 text-orange-600 p-2 rounded-full hover:bg-orange-200 transition"><i
-                                                class="fas fa-check"></i></button>
-                                    </div>
+                                <div class="card p-3 flex flex-col gap-1">
+                                    <span class="text-sm">3. Nosotros _____ salsa los sábados.</span>
+                                    <input type="text" class="clean-input" maxlength="25">
+                                </div>
+                                <div class="card p-3 flex flex-col gap-1">
+                                    <span class="text-sm">4. Yo _____ mucho en la oficina.</span>
+                                    <input type="text" class="clean-input" maxlength="25">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 text-center">trabaja, hablas, bailamos, trabajo</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DESAFÍO 2: -ER / -IR -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col gap-6">
+                        <h2><i class="fas fa-puzzle-piece text-[#ff6f00] mr-2"></i>Challenge 2: -ER and -IR verbs</h2>
+                        <p class="text-sm text-gray-600">-ER and -IR conjugations are similar. Choose the verb that makes sense and conjugate it. Bank: <strong>Beber · Escribir · Abrir · Correr</strong></p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="card p-4">
+                                <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=220&fit=crop" alt="Café" class="rounded-xl w-full object-cover h-40">
+                            </div>
+                            <div class="space-y-3">
+                                <div class="card p-3 flex flex-col gap-1">
+                                    <span class="text-sm">1. Yo _____ agua todos los días.</span>
+                                    <input type="text" class="clean-input" maxlength="25">
+                                </div>
+                                <div class="card p-3 flex flex-col gap-1">
+                                    <span class="text-sm">2. Ella _____ un libro nuevo.</span>
+                                    <input type="text" class="clean-input" maxlength="25">
+                                </div>
+                                <div class="card p-3 flex flex-col gap-1">
+                                    <span class="text-sm">3. La tienda _____ a las 10:00.</span>
+                                    <input type="text" class="clean-input" maxlength="25">
+                                </div>
+                                <div class="card p-3 flex flex-col gap-1">
+                                    <span class="text-sm">4. Nosotros _____ en el parque por la mañana.</span>
+                                    <input type="text" class="clean-input" maxlength="25">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 text-center">bebo, escribe, abre, corremos</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ¿QUIÉN ES EL SUJETO? -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col gap-6">
+                        <h2><i class="fas fa-user-friends text-[#ff6f00] mr-2"></i>Who is the subject?</h2>
+                        <p class="text-sm text-gray-600">Look at the verb ending. Write the correct subject pronoun (Yo, Tú, Él/Ella, Nosotros, Ellos, Ustedes).</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="card p-4 border-l-4 border-[#004d40]">
+                                <span class="text-sm">1. _____ cantamos en la ducha.</span>
+                                <input type="text" class="clean-input mt-2" maxlength="15">
+                            </div>
+                            <div class="card p-4 border-l-4 border-[#ff6f00]">
+                                <span class="text-sm">2. _____ duermes ocho horas.</span>
+                                <input type="text" class="clean-input mt-2" maxlength="15">
+                            </div>
+                            <div class="card p-4 border-l-4 border-[#004d40]">
+                                <span class="text-sm">3. _____ sale a las siete.</span>
+                                <input type="text" class="clean-input mt-2" maxlength="15">
+                            </div>
+                            <div class="card p-4 border-l-4 border-[#ff6f00]">
+                                <span class="text-sm">4. _____ reciben muchas cartas.</span>
+                                <input type="text" class="clean-input mt-2" maxlength="15">
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 text-center">Nosotros, Tú, Él/Ella, Ellos</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CARTA: UN DÍA NORMAL -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col gap-6">
+                        <h2><i class="fas fa-envelope text-[#ff6f00] mr-2"></i>Complete the letter</h2>
+                        <p class="text-sm text-gray-600">Use the verbs in the box in the present tense. Box: <strong>Levantar · Desayunar · Llegar · Terminar · Descansar</strong></p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="card p-4">
+                                <img src="https://images.unsplash.com/photo-1517849844237-c2b995ae5050?w=350&h=200&fit=crop" alt="Rutina" class="rounded-xl w-full object-cover h-36">
+                            </div>
+                            <div class="card bg-amber-50/50 p-4 rounded-xl space-y-2 text-sm">
+                                <p><strong>Querida Laura:</strong></p>
+                                <p>Yo me _____ a las 7:00. _____ café y tostadas. _____ al trabajo a las 8:30. _____ a las 5:00 y _____ un poco por la noche.</p>
+                                <p class="text-xs text-gray-500 mt-2">(levantar, desayunar, llegar, terminar, descansar)</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <input type="text" class="clean-input w-24" placeholder="1" maxlength="15">
+                            <input type="text" class="clean-input w-24" placeholder="2" maxlength="15">
+                            <input type="text" class="clean-input w-24" placeholder="3" maxlength="15">
+                            <input type="text" class="clean-input w-24" placeholder="4" maxlength="15">
+                            <input type="text" class="clean-input w-24" placeholder="5" maxlength="15">
+                        </div>
+                        <p class="text-xs text-gray-500 text-center">levanto, Desayuno, Llego, Termino, descanso</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JUEGO ESPACIAL: 4 OPCIONES + LÓGICA + SONIDOS -->
+            <section id="space-game-slide">
+                <style>
+                    #space-game-slide .space-game-wrap { position: relative; min-height: 75vh; background: linear-gradient(180deg, #0a0a1a 0%, #1a0a2e 50%, #0d0221 100%); border-radius: 24px; padding: 24px; overflow: hidden; box-shadow: inset 0 0 80px rgba(100,50,255,0.15); }
+                    #space-game-slide .stars { position: absolute; inset: 0; background-image: radial-gradient(2px 2px at 20px 30px, #fff, transparent), radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent), radial-gradient(2px 2px at 50px 160px, rgba(255,255,255,0.6), transparent); background-size: 200px 200px; animation: twinkle 4s ease-in-out infinite; pointer-events: none; }
+                    @keyframes twinkle { 0%,100%{ opacity: 1 } 50%{ opacity: 0.6 } }
+                    #space-game-slide .game-hud { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative; z-index: 2; }
+                    #space-game-slide .lives { display: flex; gap: 8px; align-items: center; }
+                    #space-game-slide .life { width: 36px; height: 36px; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"%23ff4757\"><path d=\"M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z\"/></svg>') center/contain no-repeat; transition: transform 0.2s; }
+                    #space-game-slide .life.lost { filter: grayscale(1); opacity: 0.35; transform: scale(0.85); }
+                    #space-game-slide .score-board { color: #a78bfa; font-weight: 800; font-size: 1.1rem; }
+                    #space-game-slide .question-card { position: relative; z-index: 2; background: rgba(255,255,255,0.06); border: 2px solid rgba(167,139,250,0.4); border-radius: 20px; padding: 28px; margin-bottom: 24px; text-align: center; }
+                    #space-game-slide .question-card .prompt { color: #e2e8f0; font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+                    #space-game-slide .question-card .q-num { color: #c4b5fd; font-size: 0.9rem; margin-bottom: 12px; }
+                    #space-game-slide .question-card .hint { color: #94a3b8; font-size: 0.8rem; margin-top: 6px; font-style: italic; }
+                    #space-game-slide .answer-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 520px; margin: 0 auto; position: relative; z-index: 2; }
+                    #space-game-slide .btn-answer { padding: 16px 20px; font-size: 1.05rem; font-weight: 700; border-radius: 14px; border: none; cursor: pointer; transition: all 0.2s; font-family: inherit; text-align: center; }
+                    #space-game-slide .btn-answer.opt-a { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; box-shadow: 0 4px 20px rgba(99,102,241,0.4); }
+                    #space-game-slide .btn-answer.opt-b { background: linear-gradient(135deg, #0ea5e9, #06b6d4); color: #fff; box-shadow: 0 4px 20px rgba(14,165,233,0.4); }
+                    #space-game-slide .btn-answer.opt-c { background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; box-shadow: 0 4px 20px rgba(245,158,11,0.4); }
+                    #space-game-slide .btn-answer.opt-d { background: linear-gradient(135deg, #ec4899, #db2777); color: #fff; box-shadow: 0 4px 20px rgba(236,72,153,0.4); }
+                    #space-game-slide .btn-answer:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(100,100,255,0.5); }
+                    #space-game-slide .btn-answer:active { transform: translateY(0); }
+                    #space-game-slide .btn-answer:disabled { cursor: default; }
+                    #space-game-slide .btn-answer.correct { background: linear-gradient(135deg, #10b981, #059669); animation: pulse 0.5s; }
+                    #space-game-slide .btn-answer.wrong { background: linear-gradient(135deg, #ef4444, #dc2626); animation: shake 0.4s; }
+                    @keyframes pulse { 0%,100%{ transform: scale(1) } 50%{ transform: scale(1.05) } }
+                    @keyframes shake { 0%,100%{ transform: translateX(0) } 25%{ transform: translateX(-6px) } 75%{ transform: translateX(6px) } }
+                    #space-game-slide .game-over-box, #space-game-slide .game-win-box { position: absolute; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.9); border-radius: 24px; padding: 24px; }
+                    #space-game-slide .game-over-box.show, #space-game-slide .game-win-box.show { display: flex; }
+                    #space-game-slide .game-over-box .box, #space-game-slide .game-win-box .box { text-align: center; max-width: 380px; }
+                    #space-game-slide .game-over-box .box .icon, #space-game-slide .game-win-box .box .icon { font-size: 4rem; margin-bottom: 16px; }
+                    #space-game-slide .game-over-box .box h3 { color: #f87171; font-size: 1.8rem; margin-bottom: 8px; }
+                    #space-game-slide .game-win-box .box h3 { color: #34d399; font-size: 1.8rem; margin-bottom: 8px; }
+                    #space-game-slide .game-over-box .box p, #space-game-slide .game-win-box .box p { color: #cbd5e1; margin-bottom: 20px; }
+                    #space-game-slide .btn-restart { padding: 14px 32px; font-size: 1rem; font-weight: 700; border-radius: 12px; border: none; cursor: pointer; background: linear-gradient(135deg, #8b5cf6, #6366f1); color: #fff; }
+                    #space-game-slide .game-title { color: #c4b5fd; font-size: 1rem; margin-bottom: 4px; position: relative; z-index: 2; }
+                    #space-game-slide .game-title .rocket { display: inline-block; margin-right: 8px; }
+                </style>
+                <div class="slide-container">
+                    <div class="space-game-wrap">
+                        <div class="stars"></div>
+                        <p class="game-title"><span class="rocket">🚀</span> Mission: Conjugate &amp; think — 4 options. Some questions need logic (choose the verb that makes sense). 3 lives!</p>
+                        <div class="game-hud">
+                            <div class="lives">
+                                <span class="life" id="life1"></span>
+                                <span class="life" id="life2"></span>
+                                <span class="life" id="life3"></span>
+                            </div>
+                            <div class="score-board">Score: <span id="game-score">0</span> / <span id="game-total">0</span></div>
+                        </div>
+                        <div class="question-card" id="game-question-card">
+                            <div class="q-num" id="game-q-num">Question 1</div>
+                            <div class="prompt" id="game-prompt">Yo _____ español.</div>
+                            <div class="hint" id="game-hint"></div>
+                            <div class="answer-btns">
+                                <button type="button" class="btn-answer opt-a" id="btn-a">A)</button>
+                                <button type="button" class="btn-answer opt-b" id="btn-b">B)</button>
+                                <button type="button" class="btn-answer opt-c" id="btn-c">C)</button>
+                                <button type="button" class="btn-answer opt-d" id="btn-d">D)</button>
+                            </div>
+                        </div>
+                        <div class="game-over-box" id="game-over-box">
+                            <div class="box">
+                                <div class="icon">💥</div>
+                                <h3>Ship damaged!</h3>
+                                <p>You ran out of lives. Try again!</p>
+                                <button type="button" class="btn-restart" id="btn-restart-loss">Play again</button>
+                            </div>
+                        </div>
+                        <div class="game-win-box" id="game-win-box">
+                            <div class="box">
+                                <div class="icon">🌟</div>
+                                <h3>Mission complete!</h3>
+                                <p>Your ship is safe. Great job!</p>
+                                <button type="button" class="btn-restart" id="btn-restart-win">Play again</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    (function() {
+                        var questions = [
+                            { prompt: 'Yo _____ español en la universidad.', a: 'estudio', b: 'estudias', c: 'estudian', d: 'estudiamos', correct: 'A', hint: '' },
+                            { prompt: 'Ella _____ música clásica por la noche.', a: 'escuchan', b: 'cocina', c: 'escucha', d: 'abre', correct: 'C', hint: 'Logic: we listen to music' },
+                            { prompt: 'Nosotros _____ pizza los viernes.', a: 'comen', b: 'come', c: 'comemos', d: 'coméis', correct: 'C', hint: '' },
+                            { prompt: 'En el desayuno yo siempre _____ café.', a: 'nado', b: 'bebes', c: 'beben', d: 'bebo', correct: 'D', hint: 'Logic: at breakfast we drink coffee' },
+                            { prompt: 'Tú _____ muy rápido en el parque.', a: 'corre', b: 'corres', c: 'corremos', d: 'corren', correct: 'B', hint: '' },
+                            { prompt: 'La profesora _____ la lección en la pizarra.', a: 'duerme', b: 'escribe', c: 'escribo', d: 'escriben', correct: 'B', hint: 'Logic: teacher writes on the board' },
+                            { prompt: 'Ellos _____ en una oficina en el centro.', a: 'trabaja', b: 'trabajo', c: 'trabajan', d: 'trabajas', correct: 'C', hint: '' },
+                            { prompt: 'Mi hermano _____ un libro de historia.', a: 'leen', b: 'lee', c: 'leemos', d: 'lees', correct: 'B', hint: '' },
+                            { prompt: 'Los niños _____ en el parque cada tarde.', a: 'trabaja', b: 'bebe', c: 'juegan', d: 'abre', correct: 'C', hint: 'Logic: children play in the park' },
+                            { prompt: 'Ustedes _____ español muy bien.', a: 'hablo', b: 'habla', c: 'hablamos', d: 'hablan', correct: 'D', hint: '' },
+                            { prompt: 'Por la mañana yo _____ a las 7:00.', a: 'desayuno', b: 'desayunan', c: 'desayunamos', d: 'desayunas', correct: 'A', hint: 'Logic: in the morning I have breakfast' },
+                            { prompt: 'La tienda _____ a las 9:00.', a: 'abro', b: 'abres', c: 'abrimos', d: 'abre', correct: 'D', hint: 'Logic: the shop opens at 9' }
+                        ];
+                        var lives = 3, current = 0, score = 0, total = questions.length;
+                        var lifeEls = [document.getElementById('life1'), document.getElementById('life2'), document.getElementById('life3')];
+                        var scoreEl = document.getElementById('game-score');
+                        var totalEl = document.getElementById('game-total');
+                        var card = document.getElementById('game-question-card');
+                        var promptEl = document.getElementById('game-prompt');
+                        var qNumEl = document.getElementById('game-q-num');
+                        var hintEl = document.getElementById('game-hint');
+                        var btnA = document.getElementById('btn-a');
+                        var btnB = document.getElementById('btn-b');
+                        var btnC = document.getElementById('btn-c');
+                        var btnD = document.getElementById('btn-d');
+                        var overBox = document.getElementById('game-over-box');
+                        var winBox = document.getElementById('game-win-box');
+                        var btns = { A: btnA, B: btnB, C: btnC, D: btnD };
+
+                        var soundCorrect = new Audio('https://cdn.pixabay.com/download/audio/2022/03/10/audio_81e2f2e8f2.mp3');
+                        var soundWrong = new Audio('https://cdn.pixabay.com/download/audio/2021/08/04/audio_c6ccf3232f.mp3?filename=negative-beeps-6008.mp3');
+                        var soundGameOver = new Audio('https://cdn.pixabay.com/download/audio/2021/08/09/audio_658b2f2c0c.mp3');
+                        var soundWin = new Audio('https://cdn.pixabay.com/download/audio/2022/03/15/audio_c76303d74b.mp3?filename=party-popper-6822.mp3');
+                        function playSound(a) { try { a.volume = 0.5; a.currentTime = 0; a.play().catch(function(){}); } catch(e) {} }
+
+                        function renderHearts() {
+                            for (var i = 0; i < 3; i++) lifeEls[i].classList.remove('lost');
+                            for (var i = lives; i < 3; i++) lifeEls[i].classList.add('lost');
+                        }
+                        function updateScore() { scoreEl.textContent = score; totalEl.textContent = total; }
+                        function showQuestion() {
+                            if (current >= total) {
+                                playSound(soundWin);
+                                winBox.classList.add('show');
+                                card.style.visibility = 'hidden';
+                                return;
+                            }
+                            var q = questions[current];
+                            qNumEl.textContent = 'Question ' + (current + 1) + ' of ' + total;
+                            promptEl.textContent = q.prompt;
+                            hintEl.textContent = q.hint || '';
+                            hintEl.style.display = q.hint ? 'block' : 'none';
+                            btnA.textContent = 'A) ' + q.a;
+                            btnB.textContent = 'B) ' + q.b;
+                            btnC.textContent = 'C) ' + q.c;
+                            btnD.textContent = 'D) ' + q.d;
+                            btnA.disabled = btnB.disabled = btnC.disabled = btnD.disabled = false;
+                            btnA.classList.remove('correct', 'wrong');
+                            btnB.classList.remove('correct', 'wrong');
+                            btnC.classList.remove('correct', 'wrong');
+                            btnD.classList.remove('correct', 'wrong');
+                        }
+                        function answer(choice) {
+                            btnA.disabled = btnB.disabled = btnC.disabled = btnD.disabled = true;
+                            var q = questions[current];
+                            var isCorrect = (choice === q.correct);
+                            if (isCorrect) {
+                                score++;
+                                playSound(soundCorrect);
+                                btns[choice].classList.add('correct');
+                            } else {
+                                lives--;
+                                playSound(soundWrong);
+                                btns[choice].classList.add('wrong');
+                                btns[q.correct].classList.add('correct');
+                                renderHearts();
+                            }
+                            updateScore();
+                            setTimeout(function() {
+                                current++;
+                                if (lives <= 0) {
+                                    playSound(soundGameOver);
+                                    overBox.classList.add('show');
+                                    card.style.visibility = 'hidden';
+                                } else {
+                                    showQuestion();
+                                }
+                            }, 900);
+                        }
+                        function restart() {
+                            lives = 3;
+                            current = 0;
+                            score = 0;
+                            overBox.classList.remove('show');
+                            winBox.classList.remove('show');
+                            card.style.visibility = 'visible';
+                            for (var i = 0; i < 3; i++) lifeEls[i].classList.remove('lost');
+                            renderHearts();
+                            updateScore();
+                            showQuestion();
+                        }
+                        btnA.onclick = function() { answer('A'); };
+                        btnB.onclick = function() { answer('B'); };
+                        btnC.onclick = function() { answer('C'); };
+                        btnD.onclick = function() { answer('D'); };
+                        document.getElementById('btn-restart-loss').onclick = restart;
+                        document.getElementById('btn-restart-win').onclick = restart;
+                        if (card) {
+                            totalEl.textContent = total;
+                            renderHearts();
+                            showQuestion();
+                        }
+                    })();
+                </script>
+            </section>
+
+            <!-- ELIGE Y CONJUGA -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col gap-6">
+                        <h2><i class="fas fa-random text-[#ff6f00] mr-2"></i>Select &amp; conjugate</h2>
+                        <p class="text-sm text-gray-600">Choose the verb that fits and conjugate it. Bank: <strong>Llevar · Ver · Decidir · Compartir</strong></p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="card p-4">
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop" alt="Equipo" class="rounded-xl w-full object-cover h-36">
+                            </div>
+                            <div class="space-y-3">
+                                <div class="card p-3 flex flex-col gap-1">
+                                    <span class="text-sm">1. Yo _____ una camisa azul hoy.</span>
+                                    <input type="text" class="clean-input" maxlength="20">
+                                </div>
+                                <div class="card p-3 flex flex-col gap-1">
+                                    <span class="text-sm">2. Ellos _____ una película cada viernes.</span>
+                                    <input type="text" class="clean-input" maxlength="20">
+                                </div>
+                                <div class="card p-3 flex flex-col gap-1">
+                                    <span class="text-sm">3. Nosotros _____ el postre.</span>
+                                    <input type="text" class="clean-input" maxlength="20">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 text-center">llevo, ven, compartimos</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ORDENA LA ORACIÓN -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col gap-6">
+                        <h2><i class="fas fa-sort-alpha-down text-[#ff6f00] mr-2"></i>Sentence builder</h2>
+                        <p class="text-sm text-gray-600">Put the words in order and conjugate the verb if needed.</p>
+                        <div class="space-y-4">
+                            <div class="card p-4 flex flex-col gap-2">
+                                <span class="text-sm text-gray-500">Words: ella / trabajar / los / lunes</span>
+                                <input type="text" class="clean-input" placeholder="Ella trabaja los lunes." maxlength="35">
+                            </div>
+                            <div class="card p-4 flex flex-col gap-2">
+                                <span class="text-sm text-gray-500">Words: nosotros / leer / la / noche / en</span>
+                                <input type="text" class="clean-input" placeholder="Nosotros leemos en la noche." maxlength="40">
+                            </div>
+                            <div class="card p-4 flex flex-col gap-2">
+                                <span class="text-sm text-gray-500">Words: ¿ / tú / dónde / vivir / ?</span>
+                                <input type="text" class="clean-input" placeholder="¿Dónde vives tú?" maxlength="25">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRADUCCIÓN -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col gap-6">
+                        <h2><i class="fas fa-language text-[#ff6f00] mr-2"></i>Translation</h2>
+                        <p class="text-sm text-gray-600">Translate to Spanish. Use the present tense and match the subject.</p>
+                        <div class="space-y-3">
+                            <div class="card p-4 flex flex-col gap-2">
+                                <span class="text-sm">1. He drinks coffee in the morning.</span>
+                                <input type="text" class="clean-input" placeholder="Él bebe café por la mañana." maxlength="45">
+                            </div>
+                            <div class="card p-4 flex flex-col gap-2">
+                                <span class="text-sm">2. Do you (tú) sing well?</span>
+                                <input type="text" class="clean-input" placeholder="¿Tú cantas bien?" maxlength="30">
+                            </div>
+                            <div class="card p-4 flex flex-col gap-2">
+                                <span class="text-sm">3. We share the room.</span>
+                                <input type="text" class="clean-input" placeholder="Nosotros compartimos la habitación." maxlength="45">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ENCUENTRA EL ERROR -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col gap-6">
+                        <h2><i class="fas fa-search text-[#ff6f00] mr-2"></i>Find the mistake</h2>
+                        <p class="text-sm text-gray-600">The verb does not match the subject. Write only the correct verb form in the box.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="card p-4 flex flex-col gap-2">
+                                <span class="text-sm">1. Yo <u>vivimos</u> en Madrid. →</span>
+                                <input type="text" class="clean-input" placeholder="vivo" maxlength="15">
+                            </div>
+                            <div class="card p-4 flex flex-col gap-2">
+                                <span class="text-sm">2. Ella <u>bailamos</u> muy bien. →</span>
+                                <input type="text" class="clean-input" placeholder="baila" maxlength="15">
+                            </div>
+                            <div class="card p-4 flex flex-col gap-2">
+                                <span class="text-sm">3. Tú y yo <u>comes</u> tarde. →</span>
+                                <input type="text" class="clean-input" placeholder="comemos" maxlength="15">
+                            </div>
+                            <div class="card p-4 flex flex-col gap-2">
+                                <span class="text-sm">4. Ustedes <u>hablo</u> inglés. →</span>
+                                <input type="text" class="clean-input" placeholder="hablan" maxlength="15">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JUEGO RÁPIDO: CORRECTO O INCORRECTO -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col gap-6">
+                        <h2><i class="fas fa-bolt text-[#ff6f00] mr-2"></i>Speed round: Correct (✓) or Wrong (✗)?</h2>
+                        <p class="text-sm text-gray-600">Read the sentence. Is the conjugation correct? Write ✓ or ✗ (or V/F).</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="card p-4 flex flex-col gap-2 bg-slate-50">
+                                <span class="text-sm">1. Ellos trabajan mucho.</span>
+                                <input type="text" class="clean-input max-w-[60px]" maxlength="3">
+                            </div>
+                            <div class="card p-4 flex flex-col gap-2 bg-slate-50">
+                                <span class="text-sm">2. Yo necesitan ayuda.</span>
+                                <input type="text" class="clean-input max-w-[60px]" maxlength="3">
+                            </div>
+                            <div class="card p-4 flex flex-col gap-2 bg-slate-50">
+                                <span class="text-sm">3. María come pescado.</span>
+                                <input type="text" class="clean-input max-w-[60px]" maxlength="3">
+                            </div>
+                            <div class="card p-4 flex flex-col gap-2 bg-slate-50">
+                                <span class="text-sm">4. Nosotros escribes cartas.</span>
+                                <input type="text" class="clean-input max-w-[60px]" maxlength="3">
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 text-center">✓, ✗, ✓, ✗</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RESPUESTA CREATIVA -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col gap-6">
+                        <h2><i class="fas fa-pen-nib text-[#ff6f00] mr-2"></i>Creative response</h2>
+                        <p class="text-sm text-gray-600">Answer in a full sentence in Spanish. Use the present tense (you can use: descansar, leer, ver, cocinar, caminar, etc.).</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="card p-4">
+                                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=200&fit=crop" alt="Libros" class="rounded-xl w-full object-cover h-32">
+                            </div>
+                            <div class="space-y-4">
+                                <div class="card p-4 flex flex-col gap-2">
+                                    <span class="text-sm font-bold">¿Qué haces tú los domingos?</span>
+                                    <input type="text" class="clean-input" placeholder="e.g. Yo descanso y leo." maxlength="60">
+                                </div>
+                                <div class="card p-4 flex flex-col gap-2">
+                                    <span class="text-sm font-bold">¿Dónde trabaja tu mamá o tu papá?</span>
+                                    <input type="text" class="clean-input" placeholder="e.g. Mi papá trabaja en una oficina." maxlength="55">
                                 </div>
                             </div>
                         </div>
@@ -900,758 +1352,19 @@
                 </div>
             </section>
 
-            <!-- SLIDE 2: IRREGULARES REBELDES -->
-            <section data-limit-scroll="false" class="bg-slate-800 text-white">
-                <div class="slide-container flex flex-col items-center h-full">
-                    <div
-                        class="w-full bg-yellow-400 text-slate-900 px-6 py-4 transform -rotate-1 shadow-xl mb-8 flex items-center justify-center gap-4 border-4 border-slate-900 border-dashed">
-                        <i class="fas fa-exclamation-triangle text-3xl animate-bounce"></i>
-                        <h2 class="text-3xl font-black uppercase tracking-wider">¡Alerta! Verbos Rebeldes</h2>
-                        <i class="fas fa-exclamation-triangle text-3xl animate-bounce"></i>
-                    </div>
-
-                    <p
-                        class="text-gray-300 mb-8 font-mono text-center max-w-2xl bg-slate-900/50 p-4 rounded-lg border border-slate-700">
-                        <i class="fas fa-terminal text-green-400 mr-2"></i>System Alert: These verbs do NOT follow the
-                        rules. Memorize them or face the consequences.
-                    </p>
-
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full">
-                        <!-- Cards -->
-                        <div
-                            class="bg-slate-700 p-4 rounded-lg border-2 border-red-500 flex flex-col items-center group hover:bg-red-900/40 transition-colors">
-                            <i
-                                class="fas fa-eye text-red-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
-                            <span class="font-bold text-gray-400 text-sm">VER</span>
-                            <div class="h-px w-full bg-white/10 my-2"></div>
-                            <span class="font-black text-xl text-white tracking-widest">VISTO</span>
-                        </div>
-                        <div
-                            class="bg-slate-700 p-4 rounded-lg border-2 border-red-500 flex flex-col items-center group hover:bg-red-900/40 transition-colors">
-                            <i
-                                class="fas fa-heart-crack text-red-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
-                            <span class="font-bold text-gray-400 text-sm">ROMPER</span>
-                            <div class="h-px w-full bg-white/10 my-2"></div>
-                            <span class="font-black text-xl text-white tracking-widest">ROTO</span>
-                        </div>
-                        <div
-                            class="bg-slate-700 p-4 rounded-lg border-2 border-red-500 flex flex-col items-center group hover:bg-red-900/40 transition-colors">
-                            <i
-                                class="fas fa-wand-magic-sparkles text-red-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
-                            <span class="font-bold text-gray-400 text-sm">HACER</span>
-                            <div class="h-px w-full bg-white/10 my-2"></div>
-                            <span class="font-black text-xl text-white tracking-widest">HECHO</span>
-                        </div>
-                        <div
-                            class="bg-slate-700 p-4 rounded-lg border-2 border-red-500 flex flex-col items-center group hover:bg-red-900/40 transition-colors">
-                            <i
-                                class="fas fa-pen-nib text-red-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
-                            <span class="font-bold text-gray-400 text-sm">ESCRIBIR</span>
-                            <div class="h-px w-full bg-white/10 my-2"></div>
-                            <span class="font-black text-xl text-white tracking-widest">ESCRITO</span>
-                        </div>
-                        <div
-                            class="bg-slate-700 p-4 rounded-lg border-2 border-red-500 flex flex-col items-center group hover:bg-red-900/40 transition-colors">
-                            <i
-                                class="fas fa-skull text-red-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
-                            <span class="font-bold text-gray-400 text-sm">MORIR</span>
-                            <div class="h-px w-full bg-white/10 my-2"></div>
-                            <span class="font-black text-xl text-white tracking-widest">MUERTO</span>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl">
-                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-600 flex items-center gap-3">
-                            <div class="bg-red-500/20 p-2 rounded-full"><i
-                                    class="fas fa-skull-crossbones text-red-400"></i></div>
-                            <p class="text-sm">"El zombi ha <strong class="text-red-400">muerto</strong>... ¿o no?"</p>
-                        </div>
-                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-600 flex items-center gap-3">
-                            <div class="bg-blue-500/20 p-2 rounded-full"><i
-                                    class="fas fa-user-shield text-blue-400"></i></div>
-                            <p class="text-sm">"Superman se ha <strong class="text-blue-400">puesto</strong> (Poner) la
-                                capa al revés."</p>
+            <!-- CIERRE -->
+            <section>
+                <div class="slide-container">
+                    <div class="flex flex-col gap-6">
+                        <h2><i class="fas fa-star text-[#ff6f00] mr-2"></i>Great job!</h2>
+                        <p class="text-sm text-gray-600">You have completed the Present Simple practice. Keep choosing the right verb and matching the ending to the subject.</p>
+                        <div class="card bg-[#004d40] text-white p-6 rounded-xl text-center">
+                            <p class="font-bold text-lg mb-2">You have completed the Intensive Regular Verbs Lab.</p>
+                            <p class="text-sm opacity-90">Sigue practicando en tucaneo.com. Download the PDF to check answers later.</p>
                         </div>
                     </div>
                 </div>
             </section>
-
-            <!-- SLIDE 3: APOCALIPSIS ZOMBI -->
-            <section data-limit-scroll="false" class="bg-[#1a2e1a] text-green-50">
-                <div class="slide-container flex flex-col items-center h-full relative">
-                    <!-- Background Decor -->
-                    <i
-                        class="fas fa-biohazard absolute top-0 right-0 text-9xl text-green-900/20 pointer-events-none rotate-12"></i>
-
-                    <h2
-                        class="text-3xl font-bold text-green-400 mb-2 font-creepster tracking-widest border-b-2 border-green-700 pb-2">
-                        EL APOCALIPSIS ZOMBI
-                    </h2>
-                    <p class="text-green-200/60 mb-8 uppercase text-sm tracking-[0.2em]">Sobreviviendo al día de hoy</p>
-
-                    <div
-                        class="bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-green-800 w-full max-w-4xl shadow-2xl relative">
-                        <!-- Blood splatter decor -->
-                        <div class="absolute -top-4 -left-4 text-red-600/60 transform -rotate-12 pointer-events-none"><i
-                                class="fas fa-virus text-5xl"></i></div>
-
-                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-4">
-                            <span class="bg-green-700 text-white text-xs px-2 py-1 rounded">MISIÓN: Reporte del
-                                Día</span>
-                            <span class="text-gray-400 text-sm font-normal">Completa con Presente Perfecto</span>
-                        </h3>
-
-                        <div class="space-y-4 font-mono">
-                            <div
-                                class="flex flex-col md:flex-row md:items-center gap-2 border-b border-green-900/50 pb-2">
-                                <span class="text-green-500 font-bold min-w-[20px]">1.</span>
-                                <span class="text-gray-300">El zombi (romper)</span>
-                                <input type="text"
-                                    class="bg-black/50 border-b border-green-600 text-green-400 text-center font-bold px-2 py-1 outline-none focus:border-red-500 transition-colors w-40"
-                                    placeholder="ha roto" data-correct="ha roto">
-                                <span class="text-gray-300">la ventana.</span>
-                                <button onclick="checkSlideInput(this)"
-                                    class="ml-auto text-green-600 hover:text-green-400"><i
-                                        class="fas fa-crosshairs"></i></button>
-                            </div>
-
-                            <div
-                                class="flex flex-col md:flex-row md:items-center gap-2 border-b border-green-900/50 pb-2">
-                                <span class="text-green-500 font-bold min-w-[20px]">2.</span>
-                                <span class="text-gray-300">Nosotros (correr)</span>
-                                <input type="text"
-                                    class="bg-black/50 border-b border-green-600 text-green-400 text-center font-bold px-2 py-1 outline-none focus:border-red-500 transition-colors w-40"
-                                    placeholder="hemos corrido" data-correct="hemos corrido">
-                                <span class="text-gray-300">5 kilómetros.</span>
-                                <button onclick="checkSlideInput(this)"
-                                    class="ml-auto text-green-600 hover:text-green-400"><i
-                                        class="fas fa-crosshairs"></i></button>
-                            </div>
-
-                            <div
-                                class="flex flex-col md:flex-row md:items-center gap-2 border-b border-green-900/50 pb-2">
-                                <span class="text-green-500 font-bold min-w-[20px]">3.</span>
-                                <span class="text-gray-300">Yo (esconderse)</span>
-                                <input type="text"
-                                    class="bg-black/50 border-b border-green-600 text-green-400 text-center font-bold px-2 py-1 outline-none focus:border-red-500 transition-colors w-40"
-                                    placeholder="me he escondido" data-correct="me he escondido">
-                                <span class="text-gray-300">debajo de la cama.</span>
-                                <button onclick="checkSlideInput(this)"
-                                    class="ml-auto text-green-600 hover:text-green-400"><i
-                                        class="fas fa-crosshairs"></i></button>
-                            </div>
-
-                            <div class="flex flex-col md:flex-row md:items-center gap-2 pb-2">
-                                <span class="text-green-500 font-bold min-w-[20px]">4.</span>
-                                <span class="text-gray-300">¿Tú (ver)</span>
-                                <input type="text"
-                                    class="bg-black/50 border-b border-green-600 text-green-400 text-center font-bold px-2 py-1 outline-none focus:border-red-500 transition-colors w-40"
-                                    placeholder="has visto" data-correct="has visto">
-                                <span class="text-gray-300">a algún zombi hoy?</span>
-                                <button onclick="checkSlideInput(this)"
-                                    class="ml-auto text-green-600 hover:text-green-400"><i
-                                        class="fas fa-crosshairs"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 4: DETECTIVES PRIVADOS -->
-            <section data-limit-scroll="false" class="bg-slate-200">
-                <div class="slide-container flex flex-col items-center h-full">
-                    <h2 class="text-3xl font-bold text-slate-800 mb-6 font-playfair flex items-center gap-3">
-                        <span
-                            class="bg-slate-800 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl"><i
-                                class="fas fa-magnifying-glass"></i></span>
-                        DETECTIVES: DEDUCCIÓN
-                    </h2>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                        <!-- Case 1 -->
-                        <div
-                            class="bg-white p-0 rounded-xl shadow-lg overflow-hidden flex flex-col border border-slate-300 group hover:-translate-y-2 transition-transform duration-300">
-                            <div class="bg-slate-800 p-3 flex justify-between items-center">
-                                <span class="text-xs font-bold text-white uppercase tracking-wider">Evidencia A</span>
-                                <i class="fas fa-baseball-bat-ball text-white/50"></i>
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col gap-4">
-                                <div
-                                    class="bg-slate-100 p-3 rounded-lg text-sm text-slate-600 italic border-l-4 border-slate-400">
-                                    "Hay cristales rotos en el suelo y una pelota de béisbol."
-                                </div>
-                                <div class="mt-auto">
-                                    <p class="text-xs font-bold text-slate-400 uppercase mb-1">Deducción:</p>
-                                    <p class="font-bold text-slate-800 text-lg leading-tight">Alguien <span
-                                            class="text-orange-600">ha roto</span> la ventana.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Case 2 -->
-                        <div
-                            class="bg-white p-0 rounded-xl shadow-lg overflow-hidden flex flex-col border border-slate-300 group hover:-translate-y-2 transition-transform duration-300">
-                            <div class="bg-slate-800 p-3 flex justify-between items-center">
-                                <span class="text-xs font-bold text-white uppercase tracking-wider">Evidencia B</span>
-                                <i class="fas fa-pen-fancy text-white/50"></i>
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col gap-4">
-                                <div
-                                    class="bg-slate-100 p-3 rounded-lg text-sm text-slate-600 italic border-l-4 border-slate-400">
-                                    "El profesor tiene tinta azul en toda la cara."
-                                </div>
-                                <div class="mt-auto">
-                                    <p class="text-xs font-bold text-slate-400 uppercase mb-1">Deducción:</p>
-                                    <p class="font-bold text-slate-800 text-lg leading-tight">Un bolígrafo <span
-                                            class="text-orange-600">ha explotado</span>.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Case 3 -->
-                        <div
-                            class="bg-white p-0 rounded-xl shadow-lg overflow-hidden flex flex-col border border-slate-300 group hover:-translate-y-2 transition-transform duration-300">
-                            <div class="bg-slate-800 p-3 flex justify-between items-center">
-                                <span class="text-xs font-bold text-white uppercase tracking-wider">Evidencia C</span>
-                                <i class="fas fa-umbrella-beach text-white/50"></i>
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col gap-4">
-                                <div
-                                    class="bg-slate-100 p-3 rounded-lg text-sm text-slate-600 italic border-l-4 border-slate-400">
-                                    "La chica está muy roja y tiene mucho calor."
-                                </div>
-                                <div class="mt-auto">
-                                    <p class="text-xs font-bold text-slate-400 uppercase mb-1">Deducción:</p>
-                                    <p class="font-bold text-slate-800 text-lg leading-tight">Ella <span
-                                            class="text-orange-600">ha tomado</span> el sol.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 5: EXCUSAS ABSURDAS -->
-            <section data-limit-scroll="false" class="bg-cyan-50">
-                <div class="slide-container flex flex-col items-center h-full">
-                    <h2 class="text-3xl font-black text-cyan-700 mb-8 italic drop-shadow-sm text-center">
-                        <i class="fas fa-comment-dots"></i> EXCUSAS ABSURDAS
-                    </h2>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-                        <!-- Comic Bubble 1 -->
-                        <div
-                            class="relative bg-white p-6 rounded-2xl shadow-md border-2 border-cyan-400 rounded-bl-none ml-4 group hover:scale-105 transition-transform">
-                            <i
-                                class="fas fa-user-astronaut absolute -top-4 -left-4 text-3xl text-purple-500 bg-white rounded-full p-1 border-2 border-purple-500"></i>
-                            <p class="text-sm font-bold text-slate-400 mb-2">Excusa #1</p>
-                            <p class="text-slate-800">Un extraterrestre <input type="text"
-                                    class="inline-block border-b-2 border-cyan-400 w-24 text-center font-bold text-cyan-600 outline-none"
-                                    placeholder="(robar)"> mi mochila.</p>
-                            <button onclick="checkSlideInput(this.previousElementSibling, 'ha robado')"
-                                class="mt-2 text-xs bg-cyan-100 text-cyan-700 px-2 py-1 rounded hover:bg-cyan-200 w-full">Check</button>
-                        </div>
-
-                        <!-- Comic Bubble 2 -->
-                        <div
-                            class="relative bg-white p-6 rounded-2xl shadow-md border-2 border-cyan-400 rounded-bl-none ml-4 group hover:scale-105 transition-transform mt-8 md:mt-0">
-                            <i
-                                class="fas fa-dog absolute -top-4 -left-4 text-3xl text-orange-500 bg-white rounded-full p-1 border-2 border-orange-500"></i>
-                            <p class="text-sm font-bold text-slate-400 mb-2">Excusa #2</p>
-                            <p class="text-slate-800">Mi perro se la <input type="text"
-                                    class="inline-block border-b-2 border-cyan-400 w-24 text-center font-bold text-cyan-600 outline-none"
-                                    placeholder="(comer)">.</p>
-                            <button onclick="checkSlideInput(this.previousElementSibling, 'ha comido')"
-                                class="mt-2 text-xs bg-cyan-100 text-cyan-700 px-2 py-1 rounded hover:bg-cyan-200 w-full">Check</button>
-                        </div>
-
-                        <!-- Comic Bubble 3 -->
-                        <div
-                            class="relative bg-white p-6 rounded-2xl shadow-md border-2 border-cyan-400 rounded-bl-none ml-4 group hover:scale-105 transition-transform">
-                            <i
-                                class="fas fa-ghost absolute -top-4 -left-4 text-3xl text-slate-500 bg-white rounded-full p-1 border-2 border-slate-500"></i>
-                            <p class="text-sm font-bold text-slate-400 mb-2">Excusa #3</p>
-                            <p class="text-slate-800">Yo <span class="font-bold text-cyan-600">he visto</span> un
-                                fantasma y me <input type="text"
-                                    class="inline-block border-b-2 border-cyan-400 w-20 text-center font-bold text-cyan-600 outline-none"
-                                    placeholder="(asustar)">.</p>
-                            <button onclick="checkSlideInput(this.previousElementSibling, 'he asustado')"
-                                class="mt-2 text-xs bg-cyan-100 text-cyan-700 px-2 py-1 rounded hover:bg-cyan-200 w-full">Check</button>
-                        </div>
-
-                        <!-- Comic Bubble 4 -->
-                        <div
-                            class="relative bg-white p-6 rounded-2xl shadow-md border-2 border-cyan-400 rounded-bl-none ml-4 group hover:scale-105 transition-transform mt-8 md:mt-0">
-                            <i
-                                class="fas fa-laptop-medical absolute -top-4 -left-4 text-3xl text-red-500 bg-white rounded-full p-1 border-2 border-red-500"></i>
-                            <p class="text-sm font-bold text-slate-400 mb-2">Excusa #4</p>
-                            <p class="text-slate-800">Mi ordenador <input type="text"
-                                    class="inline-block border-b-2 border-cyan-400 w-24 text-center font-bold text-cyan-600 outline-none"
-                                    placeholder="(morir)"> esta mañana.</p>
-                            <button onclick="checkSlideInput(this.previousElementSibling, 'ha muerto')"
-                                class="mt-2 text-xs bg-cyan-100 text-cyan-700 px-2 py-1 rounded hover:bg-cyan-200 w-full">Check</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 6: YO NUNCA -->
-            <section data-limit-scroll="false" class="bg-indigo-900">
-                <div class="slide-container flex flex-col items-center h-full">
-                    <h2 class="text-4xl font-bold text-white mb-8 font-playfair tracking-in-expand">
-                        <span class="text-indigo-400">YO</span> NUNCA <span class="text-pink-500">HE...</span>
-                    </h2>
-
-                    <div
-                        class="bg-white/10 backdrop-blur-md rounded-3xl p-8 max-w-4xl w-full border border-white/20 shadow-2xl">
-                        <ul class="space-y-4">
-                            <li
-                                class="flex items-center gap-4 text-white text-lg p-3 rounded-xl hover:bg-white/5 transition-colors">
-                                <span
-                                    class="bg-pink-500 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</span>
-                                <span class="flex-1">... (viajar) en helicóptero.</span>
-                                <div class="flex gap-2">
-                                    <button
-                                        class="px-4 py-1 rounded-full bg-indigo-600 text-xs font-bold hover:bg-indigo-500 transition">Yo
-                                        sí he viajado</button>
-                                    <button
-                                        class="px-4 py-1 rounded-full bg-slate-700 text-xs font-bold hover:bg-slate-600 transition">Yo
-                                        nunca he viajado</button>
-                                </div>
-                            </li>
-                            <li
-                                class="flex items-center gap-4 text-white text-lg p-3 rounded-xl hover:bg-white/5 transition-colors">
-                                <span
-                                    class="bg-pink-500 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</span>
-                                <span class="flex-1">... (comer) insectos fritos.</span>
-                                <div class="flex gap-2">
-                                    <button
-                                        class="px-4 py-1 rounded-full bg-indigo-600 text-xs font-bold hover:bg-indigo-500 transition">Yo
-                                        sí he comido</button>
-                                    <button
-                                        class="px-4 py-1 rounded-full bg-slate-700 text-xs font-bold hover:bg-slate-600 transition">Yo
-                                        nunca he comido</button>
-                                </div>
-                            </li>
-                            <li
-                                class="flex items-center gap-4 text-white text-lg p-3 rounded-xl hover:bg-white/5 transition-colors">
-                                <span
-                                    class="bg-pink-500 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">3</span>
-                                <span class="flex-1">... (ver) un fantasma.</span>
-                                <div class="flex gap-2">
-                                    <button
-                                        class="px-4 py-1 rounded-full bg-indigo-600 text-xs font-bold hover:bg-indigo-500 transition">Yo
-                                        sí he visto</button>
-                                    <button
-                                        class="px-4 py-1 rounded-full bg-slate-700 text-xs font-bold hover:bg-slate-600 transition">Yo
-                                        nunca he visto</button>
-                                </div>
-                            </li>
-                            <li
-                                class="flex items-center gap-4 text-white text-lg p-3 rounded-xl hover:bg-white/5 transition-colors">
-                                <span
-                                    class="bg-pink-500 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">4</span>
-                                <span class="flex-1">... (romper) un hueso.</span>
-                                <div class="flex gap-2">
-                                    <button
-                                        class="px-4 py-1 rounded-full bg-indigo-600 text-xs font-bold hover:bg-indigo-500 transition">Yo
-                                        sí he roto</button>
-                                    <button
-                                        class="px-4 py-1 rounded-full bg-slate-700 text-xs font-bold hover:bg-slate-600 transition">Yo
-                                        nunca he roto</button>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 7: SEMAFORO -->
-            <section data-limit-scroll="false" class="bg-gray-900">
-                <div class="slide-container flex flex-col items-center h-full">
-                    <h2 class="text-3xl font-bold text-white mb-8 border-b-4 border-yellow-400 pb-2">
-                        <i class="fas fa-traffic-light text-yellow-500 mr-2"></i> EL SEMÁFORO DEL TIEMPO
-                    </h2>
-
-                    <div class="flex flex-col md:flex-row gap-8 items-center justify-center w-full">
-                        <!-- Traffic Light Visual -->
-                        <div class="bg-black p-4 rounded-3xl shadow-2xl border-4 border-gray-700 flex flex-col gap-4">
-                            <div
-                                class="w-20 h-20 rounded-full bg-red-900 shadow-inner group relative hover:bg-red-500 transition-colors duration-300 flex items-center justify-center">
-                                <i class="fas fa-times text-4xl text-black/50 opacity-0 group-hover:opacity-100"></i>
-                            </div>
-                            <div
-                                class="w-20 h-20 rounded-full bg-yellow-900 shadow-inner group relative hover:bg-yellow-500 transition-colors duration-300">
-                            </div>
-                            <div
-                                class="w-20 h-20 rounded-full bg-green-900 shadow-inner group relative hover:bg-green-500 transition-colors duration-300 flex items-center justify-center">
-                                <i class="fas fa-check text-4xl text-black/50 opacity-0 group-hover:opacity-100"></i>
-                            </div>
-                        </div>
-
-                        <!-- Panel -->
-                        <div class="bg-gray-800 p-6 rounded-xl flex-1 max-w-2xl border border-gray-700">
-                            <p class="text-gray-400 mb-4 text-center">¿Podemos usar <strong class="text-white">"He
-                                    comido"</strong> con estas palabras?</p>
-
-                            <div class="grid grid-cols-2 gap-4">
-                                <!-- Yes Items -->
-                                <div class="space-y-3">
-                                    <div
-                                        class="bg-green-900/30 border border-green-800 p-3 rounded-lg flex items-center justify-between">
-                                        <span class="text-green-400 font-bold">HOY</span>
-                                        <i class="fas fa-check-circle text-green-500"></i>
-                                    </div>
-                                    <div
-                                        class="bg-green-900/30 border border-green-800 p-3 rounded-lg flex items-center justify-between">
-                                        <span class="text-green-400 font-bold">ESTA SEMANA</span>
-                                        <i class="fas fa-check-circle text-green-500"></i>
-                                    </div>
-                                    <div
-                                        class="bg-green-900/30 border border-green-800 p-3 rounded-lg flex items-center justify-between">
-                                        <span class="text-green-400 font-bold">ALGUNA VEZ</span>
-                                        <i class="fas fa-check-circle text-green-500"></i>
-                                    </div>
-                                </div>
-
-                                <!-- No Items -->
-                                <div class="space-y-3">
-                                    <div
-                                        class="bg-red-900/30 border border-red-800 p-3 rounded-lg flex items-center justify-between opacity-50 hover:opacity-100 transition-opacity">
-                                        <span class="text-red-400 font-bold decoration-line-through">AYER</span>
-                                        <i class="fas fa-times-circle text-red-500"></i>
-                                    </div>
-                                    <div
-                                        class="bg-red-900/30 border border-red-800 p-3 rounded-lg flex items-center justify-between opacity-50 hover:opacity-100 transition-opacity">
-                                        <span class="text-red-400 font-bold decoration-line-through">EN 1999</span>
-                                        <i class="fas fa-times-circle text-red-500"></i>
-                                    </div>
-                                    <div
-                                        class="bg-red-900/30 border border-red-800 p-3 rounded-lg flex items-center justify-between opacity-50 hover:opacity-100 transition-opacity">
-                                        <span class="text-red-400 font-bold decoration-line-through">ANOCHE</span>
-                                        <i class="fas fa-times-circle text-red-500"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 8: DOBLE PARTICIPIO -->
-            <section data-limit-scroll="false" class="bg-gradient-to-tr from-purple-100 to-blue-100">
-                <div class="slide-container flex flex-col items-center h-full">
-                    <h2
-                        class="text-2xl md:text-3xl font-bold text-slate-800 mb-8 bg-white px-6 py-2 rounded-full shadow-lg">
-                        <span class="text-purple-600">¿Frito</span> o <span class="text-blue-600">Freído?</span> (Bonus
-                        Round)
-                    </h2>
-
-                    <div class="space-y-6 w-full max-w-3xl">
-                        <!-- Q1 -->
-                        <div
-                            class="bg-white p-6 rounded-2xl shadow-xl flex flex-col md:flex-row items-center gap-6 border-l-8 border-purple-500 hover:scale-[1.02] transition-transform">
-                            <div
-                                class="bg-purple-100 p-3 rounded-full text-purple-600 text-2xl w-12 h-12 flex items-center justify-center font-bold">
-                                1</div>
-                            <div class="flex-1 text-center md:text-left">
-                                <p class="text-slate-700 text-lg mb-2">Yo he ____________ el documento secreto.</p>
-                                <div class="flex justify-center md:justify-start gap-3">
-                                    <button
-                                        class="px-4 py-2 bg-slate-100 rounded-lg hover:bg-purple-500 hover:text-white transition font-bold text-slate-600">IMPRIMIDO</button>
-                                    <button
-                                        class="px-4 py-2 bg-slate-100 rounded-lg hover:bg-purple-500 hover:text-white transition font-bold text-slate-600">IMPRESO</button>
-                                </div>
-                            </div>
-                            <span class="text-green-500 font-bold text-xs bg-green-100 px-2 py-1 rounded">¡Ambos
-                                correctos!</span>
-                        </div>
-
-                        <!-- Q2 -->
-                        <div
-                            class="bg-white p-6 rounded-2xl shadow-xl flex flex-col md:flex-row items-center gap-6 border-l-8 border-blue-500 hover:scale-[1.02] transition-transform">
-                            <div
-                                class="bg-blue-100 p-3 rounded-full text-blue-600 text-2xl w-12 h-12 flex items-center justify-center font-bold">
-                                2</div>
-                            <div class="flex-1 text-center md:text-left">
-                                <p class="text-slate-700 text-lg mb-2">Hemos ____________ un huevo en el asfalto.</p>
-                                <div class="flex justify-center md:justify-start gap-3">
-                                    <button
-                                        class="px-4 py-2 bg-slate-100 rounded-lg hover:bg-blue-500 hover:text-white transition font-bold text-slate-600">FREÍDO</button>
-                                    <button
-                                        class="px-4 py-2 bg-slate-100 rounded-lg hover:bg-blue-500 hover:text-white transition font-bold text-slate-600">FRITO</button>
-                                </div>
-                            </div>
-                            <span class="text-green-500 font-bold text-xs bg-green-100 px-2 py-1 rounded">¡Ambos
-                                correctos!</span>
-                        </div>
-
-                        <!-- Q3 -->
-                        <div
-                            class="bg-white p-6 rounded-2xl shadow-xl flex flex-col md:flex-row items-center gap-6 border-l-8 border-indigo-500 hover:scale-[1.02] transition-transform">
-                            <div
-                                class="bg-indigo-100 p-3 rounded-full text-indigo-600 text-2xl w-12 h-12 flex items-center justify-center font-bold">
-                                3</div>
-                            <div class="flex-1 text-center md:text-left">
-                                <p class="text-slate-700 text-lg mb-2">El sospechoso ha ___________ información falsa.
-                                </p>
-                                <div class="flex justify-center md:justify-start gap-3">
-                                    <button
-                                        class="px-4 py-2 bg-slate-100 rounded-lg hover:bg-indigo-500 hover:text-white transition font-bold text-slate-600">PROVEÍDO</button>
-                                    <button
-                                        class="px-4 py-2 bg-slate-100 rounded-lg hover:bg-indigo-500 hover:text-white transition font-bold text-slate-600">PROVISTO</button>
-                                </div>
-                            </div>
-                            <span class="text-green-500 font-bold text-xs bg-green-100 px-2 py-1 rounded">¡Ambos
-                                correctos!</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 9: BATMAN -->
-            <section data-limit-scroll="false" class="bg-gradient-to-b from-slate-900 to-black text-white">
-                <div class="slide-container flex flex-col items-center h-full">
-                    <i class="fas fa-mask text-6xl text-yellow-500 mb-4 drop-shadow-[0_0_15px_rgba(234,179,8,0.5)]"></i>
-                    <h2 class="text-3xl font-black text-white uppercase tracking-wider mb-8">Lista de Tareas: BATMAN
-                    </h2>
-
-                    <div class="flex flex-col md:flex-row gap-8 w-full max-w-4xl">
-                        <!-- List -->
-                        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-2xl w-full md:w-1/3">
-                            <h3 class="text-sm font-bold text-slate-500 uppercase mb-4 tracking-widest">To-Do List</h3>
-                            <ul class="space-y-4">
-                                <li class="flex items-center gap-3 text-green-400">
-                                    <i class="far fa-check-square text-xl"></i> <span
-                                        class="line-through text-slate-400">Salvar la ciudad</span>
-                                </li>
-                                <li class="flex items-center gap-3 text-red-400">
-                                    <i class="far fa-square text-xl"></i> <span>Lavar la capa</span>
-                                </li>
-                                <li class="flex items-center gap-3 text-green-400">
-                                    <i class="far fa-check-square text-xl"></i> <span
-                                        class="line-through text-slate-400">Atrapar al Joker</span>
-                                </li>
-                                <li class="flex items-center gap-3 text-red-400">
-                                    <i class="far fa-square text-xl"></i> <span>Llamar a mamá</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Output -->
-                        <div class="flex-1 flex flex-col justify-center gap-4">
-                            <div class="bg-slate-800/50 p-6 rounded-xl border-l-4 border-yellow-500">
-                                <p class="text-sm text-yellow-500 font-bold uppercase mb-2">Status Report:</p>
-                                <p class="text-lg leading-relaxed">
-                                    Batman <span class="text-green-400 font-bold">YA ha salvado</span> la ciudad, pero
-                                    <span class="text-red-400 font-bold">TODAVÍA NO ha lavado</span> su capa.
-                                </p>
-                            </div>
-
-                            <div class="bg-slate-800/50 p-6 rounded-xl border-l-4 border-yellow-500">
-                                <p class="text-sm text-yellow-500 font-bold uppercase mb-2">Tu turno:</p>
-                                <p class="text-slate-300 italic mb-2">Describe el resto de tareas...</p>
-                                <textarea
-                                    class="w-full bg-black/30 border border-slate-600 rounded p-2 text-white resize-none h-24 focus:border-yellow-500 outline-none"
-                                    placeholder="Escribe aquí... (Batman ya ha..., pero todavía no...)"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 10: VERDAD O MENTIRA -->
-            <section data-limit-scroll="false" class="bg-fuchsia-900 text-white">
-                <div class="slide-container flex flex-col items-center h-full">
-                    <h2 class="text-4xl font-black text-white mb-2 font-handlee">2 VERDADES, 1 MENTIRA</h2>
-                    <p class="text-fuchsia-300 text-lg mb-8">¿Puedes descubrir el engaño?</p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-8">
-                        <!-- Card 1 -->
-                        <div onclick="this.classList.toggle('bg-red-500/50')"
-                            class="bg-white/10 backdrop-blur p-8 rounded-2xl border border-white/20 cursor-pointer hover:bg-white/20 transition flex flex-col items-center text-center group">
-                            <span
-                                class="text-6xl mb-4 grayscale group-hover:grayscale-0 transition duration-500">⚽</span>
-                            <p class="font-bold text-xl">"He conocido a Messi en un ascensor."</p>
-                        </div>
-                        <!-- Card 2 -->
-                        <div onclick="this.classList.toggle('bg-red-500/50')"
-                            class="bg-white/10 backdrop-blur p-8 rounded-2xl border border-white/20 cursor-pointer hover:bg-white/20 transition flex flex-col items-center text-center group">
-                            <span
-                                class="text-6xl mb-4 grayscale group-hover:grayscale-0 transition duration-500">🐊</span>
-                            <p class="font-bold text-xl">"He comido carne de cocodrilo en Australia."</p>
-                        </div>
-                        <!-- Card 3 -->
-                        <div onclick="this.classList.toggle('bg-red-500/50')"
-                            class="bg-white/10 backdrop-blur p-8 rounded-2xl border border-white/20 cursor-pointer hover:bg-white/20 transition flex flex-col items-center text-center group">
-                            <span
-                                class="text-6xl mb-4 grayscale group-hover:grayscale-0 transition duration-500">🇯🇵</span>
-                            <p class="font-bold text-xl">"He vivido en Japón durante 3 meses."</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-black/30 p-4 rounded-xl text-center w-full max-w-2xl">
-                        <p class="font-bold text-fuchsia-200 mb-2">Instrucciones:</p>
-                        <p>Escribe 3 frases sobre TI. Dos verdades y una mentira. ¡Tu compañero debe adivinar!</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 11: SPEED TRANSLATION -->
-            <section data-limit-scroll="false" class="bg-slate-100">
-                <div class="slide-container flex flex-col items-center h-full">
-                    <div class="w-full flex justify-between items-end mb-6 border-b-2 border-slate-300 pb-2">
-                        <h2 class="text-3xl font-bold text-slate-800 uppercase tracking-tighter italic">
-                            <i class="fas fa-stopwatch text-red-600 mr-2"></i>Speed Translation
-                        </h2>
-                        <span class="bg-red-600 text-white font-bold px-3 py-1 rounded text-sm animate-pulse">5
-                            SECONDS!</span>
-                    </div>
-
-                    <div class="grid grid-cols-1 gap-4 w-full max-w-3xl">
-                        <!-- Item 1 -->
-                        <div
-                            class="bg-white p-4 rounded-lg shadow-md flex items-center gap-4 hover:shadow-lg transition transform hover:-translate-x-1">
-                            <span class="font-mono text-slate-400 font-bold text-xl">01</span>
-                            <div class="flex-1">
-                                <p class="text-sm font-bold text-slate-500 uppercase">Input:</p>
-                                <p class="text-xl font-bold text-slate-800">I have opened the door.</p>
-                            </div>
-                            <div class="hidden md:block text-right">
-                                <p class="text-xs text-slate-400">Solution:</p>
-                                <p class="text-emerald-600 font-bold">He abierto la puerta.</p>
-                            </div>
-                        </div>
-
-                        <!-- Item 2 -->
-                        <div
-                            class="bg-white p-4 rounded-lg shadow-md flex items-center gap-4 hover:shadow-lg transition transform hover:-translate-x-1">
-                            <span class="font-mono text-slate-400 font-bold text-xl">02</span>
-                            <div class="flex-1">
-                                <p class="text-sm font-bold text-slate-500 uppercase">Input:</p>
-                                <p class="text-xl font-bold text-slate-800">We have not seen the movie.</p>
-                            </div>
-                            <div class="hidden md:block text-right">
-                                <p class="text-xs text-slate-400">Solution:</p>
-                                <p class="text-emerald-600 font-bold">No hemos visto la película.</p>
-                            </div>
-                        </div>
-
-                        <!-- Item 3 -->
-                        <div
-                            class="bg-white p-4 rounded-lg shadow-md flex items-center gap-4 hover:shadow-lg transition transform hover:-translate-x-1">
-                            <span class="font-mono text-slate-400 font-bold text-xl">03</span>
-                            <div class="flex-1">
-                                <p class="text-sm font-bold text-slate-500 uppercase">Input:</p>
-                                <p class="text-xl font-bold text-slate-800">Have you done the homework?</p>
-                            </div>
-                            <div class="hidden md:block text-right">
-                                <p class="text-xs text-slate-400">Solution:</p>
-                                <p class="text-emerald-600 font-bold">¿Has hecho los deberes?</p>
-                            </div>
-                        </div>
-
-                        <!-- Item 4 -->
-                        <div
-                            class="bg-white p-4 rounded-lg shadow-md flex items-center gap-4 hover:shadow-lg transition transform hover:-translate-x-1">
-                            <span class="font-mono text-slate-400 font-bold text-xl">04</span>
-                            <div class="flex-1">
-                                <p class="text-sm font-bold text-slate-500 uppercase">Input:</p>
-                                <p class="text-xl font-bold text-slate-800">She has broken her phone.</p>
-                            </div>
-                            <div class="hidden md:block text-right">
-                                <p class="text-xs text-slate-400">Solution:</p>
-                                <p class="text-emerald-600 font-bold">Ella ha roto su teléfono.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 12: REFLEXIÓN CULTURAL -->
-            <section data-limit-scroll="false" class="bg-[#f0f9ff]">
-                <div class="slide-container flex flex-col items-center h-full">
-                    <h2
-                        class="text-2xl font-bold text-sky-800 mb-8 border-b border-sky-200 pb-4 font-playfair w-full text-center">
-                        <i class="fas fa-globe-americas mr-2"></i> REFLEXIÓN CULTURAL: ¿España o Latinoamérica?
-                    </h2>
-
-                    <div class="bg-white rounded-2xl shadow-xl p-8 border border-sky-100 max-w-4xl w-full">
-                        <div class="flex flex-col md:flex-row gap-8">
-                            <!-- Context -->
-                            <div
-                                class="md:w-1/3 border-b md:border-b-0 md:border-r border-slate-100 pb-4 md:pb-0 md:pr-4 flex flex-col justify-center items-center text-center">
-                                <i class="fas fa-clock text-4xl text-sky-300 mb-4"></i>
-                                <p class="font-bold text-slate-600 mb-2">Situación:</p>
-                                <p class="text-sm text-slate-500">Desayunaste café a las 8:00 AM.</p>
-                                <p class="text-lg font-black text-slate-800 my-2">Ahora son las 11:00 AM</p>
-                            </div>
-
-                            <!-- Comparison -->
-                            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-red-50 p-4 rounded-xl border border-red-100 hover:shadow-md transition">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <span class="text-2xl">🇪🇸</span>
-                                        <span class="font-bold text-red-800 text-sm">ESPAÑA</span>
-                                    </div>
-                                    <p class="font-bold text-slate-800 text-lg">"Hoy <span class="text-red-500">he
-                                            desayunado</span> café."</p>
-                                    <p class="text-xs text-slate-500 mt-2 italic">La mañana todavía continúa. Lo ven
-                                        conectado al presente.</p>
-                                </div>
-
-                                <div class="bg-sky-50 p-4 rounded-xl border border-sky-100 hover:shadow-md transition">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <span class="text-2xl">🌎</span>
-                                        <span class="font-bold text-sky-800 text-sm">LATINOAMÉRICA</span>
-                                    </div>
-                                    <p class="font-bold text-slate-800 text-lg">"Hoy <span
-                                            class="text-sky-500">desayuné</span> café."</p>
-                                    <p class="text-xs text-slate-500 mt-2 italic">La acción ya terminó (a las 8 AM).
-                                        Pretérito Indefinido.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="mt-8 bg-sky-50 p-4 rounded-lg flex items-center justify-between border border-sky-200">
-                            <p class="font-bold text-sky-800">¿Cuál te gusta más?</p>
-                            <div class="flex gap-2">
-                                <button
-                                    class="px-4 py-2 bg-white rounded-lg text-sm font-bold text-slate-600 shadow-sm hover:text-red-500 transition">🇪🇸
-                                    Estilo España</button>
-                                <button
-                                    class="px-4 py-2 bg-white rounded-lg text-sm font-bold text-slate-600 shadow-sm hover:text-sky-500 transition">🌎
-                                    Estilo LatAm</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- INLINE SCRIPT FOR SLIDE INTERACTIVITY -->
-            <script>
-                function checkSlideInput(btn, answer) {
-                    const input = btn.previousElementSibling ? btn.previousElementSibling : btn.parentElement.querySelector('input');
-                    if (!input) return;
-
-                    const userVal = input.value.trim().toLowerCase();
-                    const correctVal = answer ? answer.toLowerCase() : input.getAttribute('data-correct').toLowerCase();
-
-                    if (userVal.includes(correctVal) || userVal === correctVal) {
-                        input.classList.remove('border-red-400', 'text-red-500');
-                        input.classList.add('border-green-500', 'text-green-600', 'font-bold');
-                        btn.innerHTML = '<i class="fas fa-check"></i>';
-                        btn.classList.add('bg-green-100', 'text-green-600');
-                        if (typeof react === 'function') react('confetti');
-                    } else {
-                        input.classList.add('border-red-400', 'text-red-500');
-                        btn.innerHTML = '<i class="fas fa-times"></i>';
-                        btn.classList.add('bg-red-100', 'text-red-600');
-                        if (typeof playSound === 'function') playSound('error');
-                    }
-                }
-            </script>
 
         </div>
     </div>
@@ -2489,76 +2202,6 @@
                 resultDiv2.innerHTML = `<span class="text-orange-600">👍 ¡Bien! ${correctCount}/${totalCount} (${percentage2}%) - Good!</span>`;
             } else {
                 resultDiv2.innerHTML = `<span class="text-slate-600">📝 Sigue practicando - ${correctCount}/${totalCount} (${percentage2}%)</span>`;
-            }
-        }
-
-
-        // GENERIC SLIDE CHECKER FUNCTION (FLEXIBLE)
-        function checkSlide(containerId) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-
-            const inputs = container.querySelectorAll('input[data-correct]');
-            let correctCount = 0;
-            const total = inputs.length;
-
-            inputs.forEach(input => {
-                const userVal = input.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                const correctVal = input.getAttribute('data-correct').trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-                // Logic: Exact match OR contains (if correctVal is "120" and user types "120 titles")
-                let isCorrect = userVal === correctVal;
-
-                // Allow fuzzy matching for specific known answers
-                if (!isCorrect) {
-                    // If the correct answer is short (like numbers), require exact match roughly
-                    if (correctVal.length < 3) {
-                        isCorrect = userVal.includes(correctVal);
-                    } else {
-                        // For longer text, check if the core word is present
-                        if (userVal.includes(correctVal)) isCorrect = true;
-                    }
-                }
-
-                // Specific overrides based on slide context (hardcoded safety)
-                if (correctVal === '120') isCorrect = userVal.includes('120');
-                if (correctVal === '8 horas') isCorrect = userVal.includes('8') || userVal.includes('ocho');
-                if (correctVal === 'terreno') isCorrect = userVal.includes('terreno') || userVal.includes('economia');
-
-                const parent = input.parentElement;
-                let feedback = parent.querySelector('.feedback-icon');
-                if (!feedback) {
-                    // Try to find it nearby if structure differs
-                    if (input.nextElementSibling && input.nextElementSibling.classList.contains('feedback-icon')) {
-                        feedback = input.nextElementSibling;
-                    } else {
-                        feedback = document.createElement('span');
-                        feedback.className = 'feedback-icon ml-2';
-                        parent.appendChild(feedback);
-                    }
-                }
-
-                // Reset Styling
-                input.classList.remove('border-emerald-500', 'bg-emerald-50', 'text-emerald-700', 'border-red-500', 'bg-red-50', 'text-red-700', 'font-bold');
-                feedback.innerHTML = '';
-
-                if (isCorrect) {
-                    correctCount++;
-                    input.classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-700', 'font-bold');
-                    feedback.innerHTML = '<i class="fas fa-check text-emerald-500"></i>';
-                } else {
-                    input.classList.add('border-red-500', 'bg-red-50', 'text-red-700');
-                    // Show correct answer tooltip or simple X
-                    feedback.innerHTML = `<i class="fas fa-times text-red-500" title="Respuesta: ${input.getAttribute('data-correct')}"></i>`;
-                }
-            });
-
-            if (correctCount === total) {
-                if (typeof react === 'function') react('confetti');
-            } else if (correctCount > 0) {
-                if (typeof playSound === 'function') playSound('applause');
-            } else {
-                if (typeof playSound === 'function') playSound('error');
             }
         }
 

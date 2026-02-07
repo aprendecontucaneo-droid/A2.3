@@ -1932,26 +1932,7 @@
                 <script>
                     let erSolved = false;
 
-                    // Block Navigation if Reveal is present
-                    // We can use a keydown listener to stop interaction if not solved
-                    document.addEventListener('keydown', function (e) {
-                        // Check if we are on this slide (simplistic check: if the inputs are visible)
-                        const erSlide = document.getElementById('er-input-1');
-                        if (erSlide && erSlide.offsetParent !== null && !erSolved) {
-                            // If user tries to go Next (Right Arrow, Space, N, Down)
-                            if (['ArrowRight', ' ', 'n', 'ArrowDown', 'PageDown'].includes(e.key)) {
-                                e.stopPropagation();
-                                e.preventDefault();
-
-                                // Shake the button to indicate action needed
-                                const btn = document.querySelector('button[onclick="checkDiagnoses()"]');
-                                if (btn) {
-                                    btn.classList.add('animate-shake');
-                                    setTimeout(() => btn.classList.remove('animate-shake'), 500);
-                                }
-                            }
-                        }
-                    }, true);
+                 
 
                     function checkDiagnoses() {
                         let correctCount = 0;
@@ -2031,221 +2012,189 @@
             </section>
 
 
+<section>
+    <div class="slide-container h-full flex flex-col items-center justify-center relative overflow-hidden">
 
+        <div class="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
+            <i class="fas fa-user-secret text-[20rem] text-slate-800"></i>
+        </div>
 
-            <!-- SPY REPORT SECTION -->
-            <section>
-                <div class="slide-container h-full flex flex-col items-center justify-center relative overflow-hidden">
+        <div class="text-center mb-4 z-10 relative">
+            <div
+                class="inline-block bg-blue-600 text-white text-xs font-black uppercase tracking-[0.2em] px-3 py-1 mb-2 shadow-sm">
+                Instrucciones
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-2 uppercase tracking-tight">
+                Informe de Espía 🕵️‍♂️
+            </h2>
+            <p class="text-slate-600 font-medium text-base max-w-2xl mx-auto leading-tight">
+                Completa con <strong class="text-blue-600">Presente Simple</strong> (rutinas) o <strong class="text-red-600">Estar + Gerundio</strong> (acciones del momento).
+            </p>
+        </div>
 
-                    <!-- Background: Spy Theme -->
-                    <div class="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
-                        <i class="fas fa-user-secret text-[20rem] text-slate-800"></i>
-                    </div>
+        <div
+            class="w-full max-w-4xl bg-[#f4f1ea] rounded-xl shadow-2xl border-2 border-[#d3cec4] relative transform rotate-1 transition hover:rotate-0 duration-500 p-2 md:p-6">
 
-                    <div class="text-center mb-6 z-10 relative">
-                        <div
-                            class="inline-block bg-red-600 text-white text-xs font-black uppercase tracking-[0.2em] px-3 py-1 mb-2 transform -rotate-2 shadow-sm">
-                            Top Secret
-                        </div>
-                        <h2 class="text-4xl md:text-5xl font-black text-slate-800 mb-2 uppercase tracking-tight">
-                            Spy Report 🕵️‍♂️
-                        </h2>
-                        <p class="text-slate-600 font-medium text-lg">
-                            Observe the suspects and <strong class="text-red-600">complete the report</strong>.
+            <div
+                class="absolute -top-4 left-1/2 -translate-x-1/2 w-48 h-10 bg-gray-200/50 rounded-b-xl border border-gray-300 backdrop-blur-sm z-20">
+            </div>
+            <div
+                class="absolute top-4 right-8 border-4 border-red-500 text-red-500 font-black uppercase text-xl p-2 px-4 rounded transform -rotate-12 opacity-50 pointer-events-none">
+                Confidencial
+            </div>
+
+            <div
+                class="bg-white border border-gray-200 p-6 md:p-8 shadow-inner min-h-[400px] font-mono text-sm md:text-base leading-loose relative">
+
+                <div
+                    class="flex justify-between border-b-2 border-slate-800 pb-4 mb-4 tracking-widest text-xs uppercase font-bold text-slate-500">
+                    <span>Misión: Gramática A2</span>
+                    <span>Agente: 007</span>
+                </div>
+
+                <div class="space-y-4 text-slate-800" id="spy-form">
+
+                    <div class="p-3 bg-slate-50 border-l-4 border-slate-800">
+                        <p>
+                            <span class="font-bold text-slate-500 block text-xs mb-1">OBSERVACIÓN 1 (El Objetivo):</span>
+                            Normalmente, el sospechoso 
+                            <span class="inline-block mx-1">
+                                <input type="text"
+                                    class="spy-input clean-input !w-32 !inline-block !py-1 !px-2 !h-8 !border-b-2 !border-slate-400 !bg-white focus:!bg-yellow-50 text-center font-bold text-slate-800"
+                                    placeholder="(beber)" data-answer="bebe">
+                            </span>
+                            café por la mañana.
+                            <br>
+                            Pero <u>en este momento</u>, él
+                            <span class="inline-block mx-1">
+                                <input type="text"
+                                    class="spy-input clean-input !w-40 !inline-block !py-1 !px-2 !h-8 !border-b-2 !border-slate-400 !bg-white focus:!bg-yellow-50 text-center font-bold text-slate-800"
+                                    placeholder="(beber)" data-answer="está bebiendo">
+                            </span>
+                             un zumo verde. 🥤
                         </p>
                     </div>
 
-                    <!-- REPORT FOLDER -->
-                    <div
-                        class="w-full max-w-4xl bg-[#f4f1ea] rounded-xl shadow-2xl border-2 border-[#d3cec4] relative transform rotate-1 transition hover:rotate-0 duration-500 p-2 md:p-8">
-
-                        <!-- Paper Clip & Stamp -->
-                        <div
-                            class="absolute -top-4 left-1/2 -translate-x-1/2 w-48 h-12 bg-gray-200/50 rounded-b-xl border border-gray-300 backdrop-blur-sm z-20">
-                        </div>
-                        <div
-                            class="absolute top-4 right-8 border-4 border-red-500 text-red-500 font-black uppercase text-xl p-2 px-4 rounded transform -rotate-12 opacity-50 pointer-events-none">
-                            Confidential
-                        </div>
-
-                        <!-- Content -->
-                        <div
-                            class="bg-white border border-gray-200 p-6 md:p-10 shadow-inner min-h-[400px] font-mono text-sm md:text-base leading-loose relative">
-
-                            <!-- Header Info -->
-                            <div
-                                class="flex justify-between border-b-2 border-slate-800 pb-4 mb-6 tracking-widest text-xs uppercase font-bold text-slate-500">
-                                <span>Date: Today</span>
-                                <span>Location: Plaza Mayor</span>
-                                <span>Agent: 007</span>
-                            </div>
-
-                            <!-- Text Body -->
-                            <div class="space-y-6 text-slate-800" id="spy-form">
-
-                                <p>
-                                    <span class="bg-slate-800 text-white px-1">TARGET A (Male):</span>
-                                    He looks suspicious. Right now, he
-                                    <span class="inline-block mx-1">
-                                        <select
-                                            class="spy-select bg-slate-100 hover:bg-slate-200 border-b-2 border-slate-400 font-bold py-1 px-2 cursor-pointer focus:outline-none focus:border-red-500 transition-colors"
-                                            data-answer="está bebiendo">
-                                            <option value="">(beber)</option>
-                                            <option value="bebiendo">bebiendo</option>
-                                            <option value="está bebiendo">está bebiendo</option>
-                                            <option value="es bebiendo">es bebiendo</option>
-                                        </select>
-                                    </span>
-                                    a strange green liquid 🍵.
-                                </p>
-
-                                <p>
-                                    <span class="bg-slate-800 text-white px-1">TARGET B (Female):</span>
-                                    She is hiding. She
-                                    <span class="inline-block mx-1">
-                                        <select
-                                            class="spy-select bg-slate-100 hover:bg-slate-200 border-b-2 border-slate-400 font-bold py-1 px-2 cursor-pointer focus:outline-none focus:border-red-500 transition-colors"
-                                            data-answer="está escribiendo">
-                                            <option value="">(escribir)</option>
-                                            <option value="está escribiendo">está escribiendo</option>
-                                            <option value="está escribiendo">está escribindo</option>
-                                            <option value="están escribiendo">están escribiendo</option>
-                                        </select>
-                                    </span>
-                                    codes in a notebook 📓.
-                                </p>
-
-                                <p>
-                                    <span class="bg-slate-800 text-white px-1">GROUP C:</span>
-                                    Two other agents
-                                    <span class="inline-block mx-1">
-                                        <select
-                                            class="spy-select bg-slate-100 hover:bg-slate-200 border-b-2 border-slate-400 font-bold py-1 px-2 cursor-pointer focus:outline-none focus:border-red-500 transition-colors"
-                                            data-answer="están observando">
-                                            <option value="">(observar - ellos)</option>
-                                            <option value="están observando">están observando</option>
-                                            <option value="estamos observando">estamos observando</option>
-                                            <option value="está observando">está observando</option>
-                                        </select>
-                                    </span>
-                                    the bank entrance 👀.
-                                </p>
-
-                                <p>
-                                    <span class="bg-slate-800 text-white px-1">IRREGULARITY:</span>
-                                    Something is wrong. The pigeons
-                                    <span class="inline-block mx-1">
-                                        <select
-                                            class="spy-select bg-slate-100 hover:bg-slate-200 border-b-2 border-slate-400 font-bold py-1 px-2 cursor-pointer focus:outline-none focus:border-red-500 transition-colors"
-                                            data-answer="están muriendo">
-                                            <option value="">(morir o->u)</option>
-                                            <option value="están moriendo">están moriendo</option>
-                                            <option value="están muriendo">están muriendo</option>
-                                            <option value="están mueriendo">están mueriendo</option>
-                                        </select>
-                                    </span>
-                                    ? No, they are just sleeping 🐦.
-                                </p>
-
-                                <p>
-                                    <span class="bg-slate-800 text-white px-1">AGENT STATUS:</span>
-                                    I
-                                    <span class="inline-block mx-1">
-                                        <select
-                                            class="spy-select bg-slate-100 hover:bg-slate-200 border-b-2 border-slate-400 font-bold py-1 px-2 cursor-pointer focus:outline-none focus:border-red-500 transition-colors"
-                                            data-answer="estoy siguiendo">
-                                            <option value="">(seguir e->i)</option>
-                                            <option value="estoy seguiendo">estoy seguiendo</option>
-                                            <option value="sigo">sigo</option>
-                                            <option value="estoy siguiendo">estoy siguiendo</option>
-                                        </select>
-                                    </span>
-                                    the targets now.
-                                </p>
-
-                                <p>
-                                    <span class="bg-slate-800 text-white px-1">QUESTION:</span>
-                                    What
-                                    <span class="inline-block mx-1">
-                                        <select
-                                            class="spy-select bg-slate-100 hover:bg-slate-200 border-b-2 border-slate-400 font-bold py-1 px-2 cursor-pointer focus:outline-none focus:border-red-500 transition-colors"
-                                            data-answer="estás haciendo">
-                                            <option value="">(hacer - tú)</option>
-                                            <option value="haciendo">haciendo</option>
-                                            <option value="estás haciendo">estás haciendo</option>
-                                            <option value="eres haciendo">eres haciendo</option>
-                                        </select>
-                                    </span>
-                                    ? Send backup! 🚁
-                                </p>
-
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div class="mt-8 pt-6 border-t border-slate-200 text-right">
-                                <button onclick="checkSpyReport()"
-                                    class="bg-slate-800 hover:bg-slate-700 text-white font-bold py-2 px-6 shadow-lg transition active:scale-95 uppercase tracking-widest text-xs md:text-sm">
-                                    <i class="fas fa-file-signature mr-2"></i> Submit Report
-                                </button>
-                                <div id="spy-feedback"
-                                    class="mt-2 text-sm font-bold h-6 transition-all duration-300 opacity-0">...</div>
-                            </div>
-
-                            <!-- Stamp effect on success -->
-                            <div id="approved-stamp"
-                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-8 border-green-600 text-green-600 font-black uppercase text-6xl p-4 rounded-lg transform -rotate-12 opacity-0 pointer-events-none transition duration-500 z-50 mix-blend-multiply">
-                                APPROVED
-                            </div>
-
-                        </div>
+                    <div class="p-3 bg-slate-50 border-l-4 border-slate-800">
+                        <p>
+                            <span class="font-bold text-slate-500 block text-xs mb-1">OBSERVACIÓN 2 (El Grupo):</span>
+                            Esos agentes <u>todos los días</u>
+                            <span class="inline-block mx-1">
+                                <input type="text"
+                                    class="spy-input clean-input !w-32 !inline-block !py-1 !px-2 !h-8 !border-b-2 !border-slate-400 !bg-white focus:!bg-yellow-50 text-center font-bold text-slate-800"
+                                    placeholder="(llevar)" data-answer="llevan">
+                            </span>
+                            sombreros negros. Es su uniforme habitual. 🎩
+                        </p>
                     </div>
+
+                    <div class="p-3 bg-slate-50 border-l-4 border-slate-800">
+                        <p>
+                            <span class="font-bold text-slate-500 block text-xs mb-1">OBSERVACIÓN 3 (La Mujer):</span>
+                            ¡Atención! <u>Ahora mismo</u> la mujer
+                            <span class="inline-block mx-1">
+                                <input type="text"
+                                    class="spy-input clean-input !w-40 !inline-block !py-1 !px-2 !h-8 !border-b-2 !border-slate-400 !bg-white focus:!bg-yellow-50 text-center font-bold text-slate-800"
+                                    placeholder="(hablar)" data-answer="está hablando">
+                            </span>
+                            por un teléfono secreto. 📞
+                        </p>
+                    </div>
+                    
+                    <div class="p-3 bg-slate-50 border-l-4 border-slate-800">
+                        <p>
+                            <span class="font-bold text-slate-500 block text-xs mb-1">OBSERVACIÓN 4 (Entorno):</span>
+                            En esta plaza <u>siempre</u>
+                            <span class="inline-block mx-1">
+                                <input type="text"
+                                    class="spy-input clean-input !w-32 !inline-block !py-1 !px-2 !h-8 !border-b-2 !border-slate-400 !bg-white focus:!bg-yellow-50 text-center font-bold text-slate-800"
+                                    placeholder="(haber)" data-answer="hay">
+                            </span>
+                            muchas palomas. 🐦
+                        </p>
+                    </div>
+
+                    <div class="p-3 bg-slate-50 border-l-4 border-slate-800">
+                        <p>
+                            <span class="font-bold text-slate-500 block text-xs mb-1">ESTADO ACTUAL:</span>
+                            Yo no puedo hablar. <u>Ahora</u>
+                            <span class="inline-block mx-1">
+                                <input type="text"
+                                    class="spy-input clean-input !w-40 !inline-block !py-1 !px-2 !h-8 !border-b-2 !border-slate-400 !bg-white focus:!bg-yellow-50 text-center font-bold text-slate-800"
+                                    placeholder="(escribir)" data-answer="estoy escribiendo">
+                            </span>
+                            este informe. 📝
+                        </p>
+                    </div>
+
                 </div>
 
-                <script>
-                    function checkSpyReport() {
-                        const selects = document.querySelectorAll('.spy-select');
-                        let correct = 0;
-                        const total = selects.length;
-                        let allAnswered = true;
+                <div class="mt-6 pt-4 border-t border-slate-200 text-right">
+                    <button onclick="checkSpyReport()"
+                        class="bg-slate-800 hover:bg-slate-700 text-white font-bold py-2 px-6 shadow-lg transition active:scale-95 uppercase tracking-widest text-xs md:text-sm">
+                        <i class="fas fa-file-signature mr-2"></i> Enviar a la Base
+                    </button>
+                    <div id="spy-feedback"
+                        class="mt-2 text-sm font-bold h-6 transition-all duration-300 opacity-0">...</div>
+                </div>
 
-                        selects.forEach(sel => {
-                            if (sel.value === "") allAnswered = false;
+                <div id="approved-stamp"
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-8 border-green-600 text-green-600 font-black uppercase text-6xl p-4 rounded-lg transform -rotate-12 opacity-0 pointer-events-none transition duration-500 z-50 mix-blend-multiply bg-white/80">
+                    APROBADO
+                </div>
 
-                            // Visual Reset
-                            sel.classList.remove('text-green-600', 'text-red-500', 'border-green-500', 'border-red-500');
+            </div>
+        </div>
+    </div>
 
-                            if (sel.value === sel.dataset.answer) {
-                                correct++;
-                                sel.classList.add('text-green-600', 'border-green-500');
-                            } else if (sel.value !== "") {
-                                sel.classList.add('text-red-500', 'border-red-500');
-                            }
-                        });
+    <script>
+        function checkSpyReport() {
+            const inputs = document.querySelectorAll('.spy-input');
+            let correct = 0;
+            const total = inputs.length;
+            let allAnswered = true;
 
-                        const feed = document.getElementById('spy-feedback');
-                        const stamp = document.getElementById('approved-stamp');
-                        feed.classList.remove('opacity-0', 'text-green-600', 'text-red-600');
+            inputs.forEach(input => {
+                const val = input.value.toLowerCase().trim();
+                if (val === "") allAnswered = false;
 
-                        if (!allAnswered) {
-                            feed.innerText = "⚠️ Incomplete Intelligence. Please fill all fields.";
-                            feed.classList.add('text-slate-500');
-                            return;
-                        }
+                // Visual Reset
+                input.classList.remove('text-green-600', 'text-red-500', 'border-green-500', 'border-red-500', 'bg-red-50', 'bg-green-50');
 
-                        if (correct === total) {
-                            feed.innerText = "Mission Accomplished. Good work, Agent.";
-                            feed.classList.add('text-green-600');
-                            stamp.classList.remove('opacity-0', 'scale-150');
-                            stamp.classList.add('animate-bounce');
-                            if (window.confetti) confetti({ particleCount: 150, spread: 100, colors: ['#000', '#d3cec4'] });
-                        } else {
-                            feed.innerText = `Intelligence Accuracy: ${Math.round((correct / total) * 100)}%. Try again.`;
-                            feed.classList.add('text-red-600');
-                            stamp.classList.add('opacity-0');
-                        }
-                    }
-                </script>
-            </section>
+                if (val === input.dataset.answer) {
+                    correct++;
+                    input.classList.add('text-green-600', 'border-green-500', 'bg-green-50');
+                } else if (val !== "") {
+                    input.classList.add('text-red-500', 'border-red-500', 'bg-red-50');
+                }
+            });
+
+            const feed = document.getElementById('spy-feedback');
+            const stamp = document.getElementById('approved-stamp');
+            feed.classList.remove('opacity-0', 'text-green-600', 'text-red-600', 'text-slate-500');
+
+            if (!allAnswered) {
+                feed.innerText = "⚠️ Faltan datos. Completa todos los espacios.";
+                feed.classList.add('text-slate-500');
+                return;
+            }
+
+            if (correct === total) {
+                feed.innerText = "Informe verificado. Excelente gramática, Agente.";
+                feed.classList.add('text-green-600');
+                stamp.classList.remove('opacity-0', 'scale-150');
+                stamp.classList.add('animate-bounce');
+                if (window.confetti) confetti({ particleCount: 150, spread: 100, colors: ['#000', '#d3cec4'] });
+                if (window.playSound) playSound('applause');
+            } else {
+                feed.innerText = `Precisión: ${Math.round((correct / total) * 100)}%. Revisa: ¿Es rutina o está pasando ahora?`;
+                feed.classList.add('text-red-600');
+                stamp.classList.add('opacity-0');
+                if (window.playSound) playSound('error');
+            }
+        }
+    </script>
+</section>
 
             <!-- DRAG AND DROP STORY SECTION -->
             <section>
@@ -3158,6 +3107,20 @@
         function openTool(toolName) { window.dispatchEvent(new CustomEvent('open-tool', { detail: toolName })); }
 
         // --- CONTROL INTELIGENTE DE TECLAS (VERSIÓN FINAL) ---
+
+        // Listener Global de Respaldo: Asegura funcionamiento de flechas
+        window.addEventListener('keydown', (e) => {
+            if (isMobile) return;
+            if (e.defaultPrevented) return; // Si ya fue procesado (por Reveal o Zoom), ignorar.
+            if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
+
+            if (e.key === 'ArrowLeft') {
+                Reveal.prev();
+            } else if (e.key === 'ArrowRight') {
+                Reveal.next();
+            }
+        });
+
         function handleZoomNavigation(e) {
             // 1. Ignorar si el usuario escribe en un input
             if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
@@ -3177,6 +3140,7 @@
 
             // 4. Decidimos si hacer scroll arriba o no
             if (actionTriggered) {
+                e.preventDefault();
                 const indicesAfter = Reveal.getIndices();
 
                 // LÓGICA: Si la diapositiva Horizontal (h) o Vertical (v) cambió, es una diapositiva nueva -> SCROLL TOP
